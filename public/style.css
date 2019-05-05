@@ -16,3 +16,9 @@ ul a {
 	width: 25%;
 	padding: 3%;
 }
+
+/* Footer */
+.dividor {
+	height: 5vh;
+	background: url(../img/holiday.jpg) center center;
+}
