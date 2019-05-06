@@ -18,19 +18,40 @@
 </head>
 
 <body>
-	<nav class="container text-center sticky-top background-white">
-		<a href="index.html"><img src="../img/Logo.jpeg" height="50px" alt="Logo"></a>
-		<ul class="list-inline">
-			<li class="list-inline-item ml-2"><a href="index.html">Home</a></li>
-			<li class="list-inline-item ml-2"><a href="about.html">Über uns</a></li>
-		</ul>
-	</nav>
+	<div class="container text-center sticky-top background-white">
+		<nav id="navbarSite"
+			 class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<a href="index.html" class="navbar-brand d-none d-sm-inline-block"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+				<div class="navbar-nav">
+					<a href="index.html" class="nav-item nav-link">Home</a>
+					<a href="about.html" class="nav-item nav-link">Über uns</a>
+
+					<!-- Dropdown -->
+					<div class="dropdown">
+						<a class="nav-item nav-link dropdown-toggle"
+							 data-toggle="dropdown"
+							 id="menuListDropdown"
+							 aria-haspopup="true"
+							 aria-expanded="false"
+							 style="cursor: pointer">Menus</a>
+						<div class="dropdown-menu"
+							 aria-labelledby="menuListDropdown">
+							<a class="dropdown-item" href="#">Ehrlich</a>
+							<a class="dropdown-item" href="#">Raffiniert</a>
+							<a class="dropdown-item" href="#">Chef's Choice</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
 	<article class="container">
 		<img src="../img/titelbild.png"
-			 class="img-fluid"
+			 class="img-fluid w-100"
 			 id="top"
 			 alt="Titelbild">
-		<div class="text-center">
+		<div class="text-center mt-5">
 			<h1 class="display-3">Dein Koch</h1>
 		</div>
 		<div class="row mt-5">
@@ -78,7 +99,8 @@
 
 	<script src="../dependencies/jquery.js"></script>
 	<script src="../dependencies/popper.js"></script>
-	<script scr="../dependencies/bootstrap.js"></script>
+	<script src="../dependencies/bootstrap.js"></script>
+	<script src="../public/script.js"></script>
 </body>
 
 </html>

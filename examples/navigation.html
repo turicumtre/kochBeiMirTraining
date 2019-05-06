@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<title>KochBeiMir</title>
+	<link href="../dependencies/bootstrap.css"
+		  rel="stylesheet">
+	<link href="../public/style.css"
+		  rel="stylesheet">
+	</link>
+	<link rel="icon"
+		  href="../img/favicon.jpg">
+</head>
+
+<body>
+	<div class="container">
+		<h1>nav examples</h1>
+		<hr>
+		<nav class="nav justify-content-left">
+			<a href="navigation.html" class="nav-item nav-link active">justify-content-left</a>
+			<a href="#" class="nav-item nav-link disabled">Disabled</a>
+		</nav>
+		<hr>
+		<nav class="nav justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">justify-content-center</a>
+			<a href="#" class="nav-item nav-link disabled">Disabled</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-pills justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">nav-pills</a>
+			<a href="#" class="nav-item nav-link">Über uns</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-tabs justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">nav-tabs</a>
+			<a href="#" class="nav-item nav-link">Über uns</a>
+		</nav>
+		<nav class="nav nav-pills justify-content-center flex-column flex-sm-row mt-3">
+			<a href="navigation.html" class="nav-item nav-link active">Stacks</a>
+			<a href="#" class="nav-item nav-link">up</a>
+			<a href="#" class="nav-item nav-link">when</a>
+			<a href="#" class="nav-item nav-link">getting</a>
+			<a href="#" class="nav-item nav-link">smaller</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-tabs justify-content-center nav-justified">
+			<a href="navigation.html" class="nav-item nav-link active">nav-justified</a>
+			<a href="#" class="nav-item nav-link">All have the</a>
+			<a href="#" class="nav-item nav-link">same size</a>
+			<a href="#" class="nav-item nav-link">even if one is very very very long</a>
+		</nav>
+		<nav class="nav nav-tabs justify-content-center nav-fill">
+			<a href="navigation.html" class="nav-item nav-link active">nav-fill</a>
+			<a href="#" class="nav-item nav-link">Sizes adjust</a>
+			<a href="#" class="nav-item nav-link">to</a>
+			<a href="#" class="nav-item nav-link">the text length. Longer ones have more space</a>
+		</nav>
+		<h1 class="mt-5">NavBar examples</h1>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Navigation</a>
+					<a href="#" class="nav-item nav-link">Stacks up</a>
+					<a href="#" class="nav-item nav-link">By default</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Much</a>
+					<a href="#" class="nav-item nav-link">Better</a>
+					<a href="#" class="nav-item nav-link">Now</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+			<div class="container">
+				<a href="#" class="navbar-brand">Koch bei mir</a>
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Dark</a>
+					<a href="#" class="nav-item nav-link">Navbar</a>
+					<a href="#" class="nav-item nav-link">With Brand</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav id="navbarSite"
+			 class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<a href="#" class="navbar-brand d-none d-sm-inline-block"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+				<span class="navbar-text d-none d-lg-inline-block">Wir sind die besten</span>
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link">Home</a>
+					<a href="#" class="nav-item nav-link">Über uns</a>
+
+
+					<!-- Dropdown -->
+					<div class="dropdown">
+						<a class="nav-item nav-link dropdown-toggle"
+							  data-toggle="dropdown"
+							  id="menuListDropdown"
+							  aria-haspopup="true"
+							  aria-expanded="false"
+							  style="cursor: pointer">Menus</a>
+
+						<div class="dropdown-menu"
+							 aria-labelledby="menuListDropdown">
+							<a class="dropdown-item" href="#">Ehrlich</a>
+							<a class="dropdown-item" href="#">Raffiniert</a>
+							<a class="dropdown-item" href="#">Chef's Choice</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<script src="../dependencies/jquery.js"></script>
+	<script src="../dependencies/popper.js"></script>
+	<script src="../dependencies/bootstrap.js"></script>
+	<script src="../public/script.js"></script>
+</body>
+
+</html>
