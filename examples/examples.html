@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<title>KochBeiMir</title>
+	<link href="../dependencies/bootstrap.css"
+		  rel="stylesheet">
+	<link href="style.css"
+		  rel="stylesheet">
+	</link>
+	<link rel="icon"
+		  href="../img/favicon.jpg">
+</head>
+
+<body>
+	<main class="container mt-3">
+		<!-- NAVIGATION -->
+		<h1>nav examples</h1>
+		<hr>
+		<nav class="nav justify-content-left">
+			<a href="navigation.html" class="nav-item nav-link active">justify-content-left</a>
+			<a href="#" class="nav-item nav-link disabled">Disabled</a>
+		</nav>
+		<hr>
+		<nav class="nav justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">justify-content-center</a>
+			<a href="#" class="nav-item nav-link disabled">Disabled</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-pills justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">nav-pills</a>
+			<a href="#" class="nav-item nav-link">Über uns</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-tabs justify-content-center">
+			<a href="navigation.html" class="nav-item nav-link active">nav-tabs</a>
+			<a href="#" class="nav-item nav-link">Über uns</a>
+		</nav>
+		<nav class="nav nav-pills justify-content-center flex-column flex-sm-row mt-3">
+			<a href="navigation.html" class="nav-item nav-link active">Stacks</a>
+			<a href="#" class="nav-item nav-link">up</a>
+			<a href="#" class="nav-item nav-link">when</a>
+			<a href="#" class="nav-item nav-link">getting</a>
+			<a href="#" class="nav-item nav-link">smaller</a>
+		</nav>
+		<hr>
+		<nav class="nav nav-tabs justify-content-center nav-justified">
+			<a href="navigation.html" class="nav-item nav-link active">nav-justified</a>
+			<a href="#" class="nav-item nav-link">All have the</a>
+			<a href="#" class="nav-item nav-link">same size</a>
+			<a href="#" class="nav-item nav-link">even if one is very very very long</a>
+		</nav>
+		<nav class="nav nav-tabs justify-content-center nav-fill">
+			<a href="navigation.html" class="nav-item nav-link active">nav-fill</a>
+			<a href="#" class="nav-item nav-link">Sizes adjust</a>
+			<a href="#" class="nav-item nav-link">to</a>
+			<a href="#" class="nav-item nav-link">the text length. Longer ones have more space</a>
+		</nav>
+
+		<hr>
+		<h1 class="mt-5">NavBar examples</h1>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Navigation</a>
+					<a href="#" class="nav-item nav-link">Stacks up</a>
+					<a href="#" class="nav-item nav-link">By default</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Much</a>
+					<a href="#" class="nav-item nav-link">Better</a>
+					<a href="#" class="nav-item nav-link">Now</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+			<div class="container">
+				<a href="#" class="navbar-brand">Koch bei mir</a>
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Dark</a>
+					<a href="#" class="nav-item nav-link">Navbar</a>
+					<a href="#" class="nav-item nav-link">With Brand</a>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		<nav id="navbarSite"
+			 class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<a href="#" class="navbar-brand d-none d-sm-inline-block"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+				<span class="navbar-text d-none d-lg-inline-block">Wir sind die besten</span>
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link">Home</a>
+					<a href="#" class="nav-item nav-link">Über uns</a>
+
+
+					<!-- Dropdown -->
+					<div class="dropdown">
+						<a class="nav-item nav-link dropdown-toggle"
+								  data-toggle="dropdown"
+								  id="menuListDropdown"
+								  aria-haspopup="true"
+								  aria-expanded="false"
+								  style="cursor: pointer">Menus</a>
+
+						<div class="dropdown-menu"
+							 aria-labelledby="menuListDropdown">
+							<a class="dropdown-item" href="#">Ehrlich</a>
+							<a class="dropdown-item" href="#">Raffiniert</a>
+							<a class="dropdown-item" href="#">Chef's Choice</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<hr>
+		<!-- BUTTONS -->
+		<h1>Buttons</h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp">https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp</a>
+		<h2>All colors</h2>
+		<button class="btn btn-primary">primary</button>
+		<button class="btn btn-secondary">secondary</button>
+		<button class="btn btn-success">success</button>
+		<button class="btn btn-info">info</button>
+		<button class="btn btn-warning">warning</button>
+		<button class="btn btn-danger">danger</button>
+		<button class="btn btn-light">light</button>
+		<button class="btn btn-dark">dark</button>
+		<br>
+
+		<h2>All colors outlined</h2>
+		<button class="btn btn-outline-primary">primary</button>
+		<button class="btn btn-outline-secondary">secondary</button>
+		<button class="btn btn-outline-success">success</button>
+		<button class="btn btn-outline-info">info</button>
+		<button class="btn btn-outline-warning">warning</button>
+		<button class="btn btn-outline-danger">danger</button>
+		<button class="btn btn-outline-light">light</button>
+		<button class="btn btn-outline-dark">dark</button>
+		<br>
+
+		<h2>All colors outlined background dark</h2>
+		<button class="bg-dark btn btn-outline-primary">primary</button>
+		<button class="bg-dark btn btn-outline-secondary">secondary</button>
+		<button class="bg-dark btn btn-outline-success">success</button>
+		<button class="bg-dark btn btn-outline-info">info</button>
+		<button class="bg-dark btn btn-outline-warning">warning</button>
+		<button class="bg-dark btn btn-outline-danger">danger</button>
+		<button class="bg-dark btn btn-outline-light">light</button>
+		<button class="bg-dark btn btn-outline-dark">dark</button>
+		<br>
+
+		<h2>Sizes</h2>
+		<button class="btn btn-dark btn-sm">small</button>
+		<button class="btn btn-dark btn">default</button>
+		<button class="btn btn-dark btn-lg">large</button>
+		<button class="btn btn-dark btn-block mt-1">block</button>
+
+		<br>
+		<h2>Button as anchor or input</h2>
+		<a href="#" class="btn btn-primary" role="button">&lt;a&gt;</a>
+		<input class="btn btn-primary"
+			   type="button"
+			   value="&lt;input&gt;">
+		<br>
+		<h2>Button groups</h2>
+		<span class="inline">regular</span>
+		<div class="btn-group mt-1">
+			<button class="btn btn-dark active">Active</button>
+			<button class="btn btn-dark">Not Active</button>
+			<button class="btn btn-dark">Not Active</button>
+		</div>
+		<div class="btn-group mt-1">
+			<button class="btn btn-warning active">Active</button>
+			<button class="btn btn-warning">Not Active</button>
+			<button class="btn btn-warning">Not Active</button>
+		</div>
+		<div class="btn-group mt-1">
+			<button class="btn btn-danger active">Active</button>
+			<button class="btn btn-danger">Not Active</button>
+			<button class="btn btn-danger">Not Active</button>
+		</div>
+		<br>
+		<span class="inline">Outline</span>
+		<div class="btn-group mt-1">
+			<button class="btn btn-outline-dark active">Active</button>
+			<button class="btn btn-outline-dark">Not Active</button>
+			<button class="btn btn-outline-dark">Not Active</button>
+		</div>
+		<div class="btn-group mt-1">
+			<button class="btn btn-outline-warning active">Active</button>
+			<button class="btn btn-outline-warning">Not Active</button>
+			<button class="btn btn-outline-warning">Not Active</button>
+		</div>
+		<div class="btn-group mt-1">
+			<button class="btn btn-outline-danger active">Active</button>
+			<button class="btn btn-outline-danger">Not Active</button>
+			<button class="btn btn-outline-danger">Not Active</button>
+		</div>
+		<br>
+		<span class="inline">Vertical</span>
+		<div class="btn-group-vertical mt-1">
+			<button class="btn btn-outline-success active">Active</button>
+			<button class="btn btn-outline-success">Not Active</button>
+			<button class="btn btn-outline-success">Not Active</button>
+		</div>
+		<div class="btn-group-vertical mt-1">
+			<button class="btn btn-outline-danger active">Active</button>
+			<button class="btn btn-outline-danger">Not Active</button>
+			<button class="btn btn-outline-danger">Not Active</button>
+		</div>
+		<div class="btn-group-vertical mt-1">
+			<button class="btn btn-outline-dark ">Single Phase</button>
+			<button class="btn btn-outline-dark">Two Phase</button>
+			<button class="btn btn-outline-dark active">Three Phase</button>
+		</div>
+		<div class="btn-group-vertical mt-1">
+			<button class="btn btn-outline-dark active">Current</button>
+			<button class="btn btn-outline-dark">Power</button>
+			<button class="btn btn-outline-dark">Impedance</button>
+		</div>
+		<div class="btn-group-vertical mt-1">
+			<button class="btn btn-outline-dark">Regular</button>
+			<button class="btn btn-outline-dark active">Aperiodic</button>
+			<button class="btn btn-outline-dark"
+					disabled>Thermal</button>
+		</div>
+
+		<h2>spinning buttons</h2>
+		<button class="btn btn-primary"><span class="spinner-border spinner-border-sm"></span></button>
+		<button class="btn btn-primary"><span class="spinner-border spinner-border-sm"></span> Loading..</button>
+		<button class="btn btn-dark"><span class="spinner-border spinner-border-sm"></span> Loading..</button>
+		<button class="btn btn-outline-dark"><span class="spinner-border spinner-border-sm"></span> Loading..</button>
+		<button class="btn btn-primary"
+				disabled><span class="spinner-border spinner-border-sm"></span> Loading..
+		</button>
+		<button class="btn btn-primary"
+				disabled><span class="spinner-grow spinner-grow-sm"></span> Loading..
+		</button>
+		<button class="btn btn-primary"
+				disabled><span class="spinner-grow spinner-grow-sm"></span>
+		</button>
+		<span class="spinner-grow spinner-grow-sm ml-3"></span>
+		<span class="spinner-border spinner-border-sm ml-3"></span>
+		<span class="spinner-grow spinner-grow ml-3"></span>
+		<span class="spinner-border spinner-border ml-3"></span>
+		<hr>
+
+		<!-- BADGES -->
+		<h1>Badges You<span class="badge badge-danger">Tube</span> </h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_badges.asp">https://www.w3schools.com/bootstrap4/bootstrap_badges.asp</a>
+		<p>
+			Lorem ipsum dolor sit amet <span class="badge badge-dark">Regular</span> consetetur sadipscing elitr, sed
+			diam nonumy eirmod tempor invidunt ut labore et
+			dolore magna aliquyam erat, sed diam voluptua. <span class="badge badge-dark badge-pill">Pill</span> At
+			vero eos et
+			accusam et justo duo dolores et ea rebum. Stet
+			clita kasd gubergren, no sea takimata <span class="badge badge-danger badge-pill">Pill Danger</span> sanctus
+			est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. <span
+				  class="badge badge-success badge-pill">Pill Success</span>
+		</p>
+
+
+		<!-- PROGRESS BAR -->
+		<hr>
+		<h1>Progress bar</h1>
+		<div class="progress mt-1">
+			<div class="progress-bar"
+				 style="width:20%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar bg-success"
+				 style="width:35%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar bg-warning"
+				 style="width:40%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar bg-danger"
+				 style="width:45%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar progress-bar-striped bg-danger"
+				 style="width:40%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+				 style="width:25%; height: 40px;"></div>
+		</div>
+		<div class="progress mt-1">
+			<div class="progress-bar bg-warning"
+				 style="width:10%; height: 40px;"></div>
+			<div class="progress-bar progress-bar bg-danger"
+				 style="width:35%; height: 40px;"></div>
+		</div>
+
+
+		<!-- LIST GROUP -->
+		<hr>
+		<h1>List Group</h1>
+		<ul class="list-group">
+			<li class="list-group-item active">Active</li>
+			<li class="list-group-item">Not active <span class="badge badge-primary">12</span></li>
+			<li class="list-group-item list-group-item-success">success</li>
+			<li class="list-group-item list-group-item-danger">danger</li>
+			<li class="list-group-item list-group-item-dark">dark</li>
+			<li class="list-group-item list-group-item-light">light</li>
+		</ul>
+
+		<!-- BREADCRUMB -->
+		<hr>
+		<h1>Breadcrumb</h1>
+		<span>See in style at the ent of the body how to change the separator</span>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Home</li>
+			<li class="breadcrumb-item">Menus</li>
+			<li class="breadcrumb-item active">Ehrlich</li>
+		</ol>
+
+		<div class="mb-5"></div>
+	</main>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="../dependencies/jquery.js"></script>
+	<script src="../dependencies/popper.js"></script>
+	<script src="../dependencies/bootstrap.js"></script>
+
+	<style>
+		.breadcrumb-item+.breadcrumb-item::before {
+			content: '/'
+		}
+	</style>
+</body>
+
+
+
+</html>
