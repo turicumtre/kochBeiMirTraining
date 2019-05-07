@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<title>KochBeiMir</title>
+	<link href="../dependencies/bootstrap.css"
+		  rel="stylesheet">
+	<link href="style.css"
+		  rel="stylesheet">
+	</link>
+	<link rel="icon"
+		  href="../img/favicon.jpg">
+</head>
+
+<body>
+	<!-- NAVIGATION -->
+	<div class="container text-center sticky-top background-white">
+		<nav id="navbarSite"
+			 class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<a href="index.html" class="navbar-brand"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+
+				<!-- Hamburger Button -->
+				<button class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#toggledNavigation"><span class="navbar-toggler-icon"></span></button>
+
+
+				<div class="navbar-nav collapse navbar-collapse"
+					 id="toggledNavigation">
+					<a href="index.html" class="nav-item nav-link active">Home</a>
+					<a href="about.html" class="nav-item nav-link">Über uns</a>
+
+					<!-- Dropdown -->
+					<div class="dropdown">
+						<a class="nav-item nav-link dropdown-toggle"
+							 data-toggle="dropdown"
+							 id="menuListDropdown"
+							 aria-haspopup="true"
+							 aria-expanded="false"
+							 style="cursor: pointer">Menus</a>
+						<div class="dropdown-menu"
+							 aria-labelledby="menuListDropdown">
+							<a class="dropdown-item" href="#">Ehrlich</a>
+							<a class="dropdown-item" href="#">Raffiniert</a>
+							<a class="dropdown-item" href="#">Chef's Choice</a>
+						</div>
+					</div>
+					<a href="contact.html" class="nav-item nav-link">Kontakt</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main class="container mt-3">
+		<button class="btn btn-dark">Dark Button</button>
+		<button class="btn btn-light">Light Button</button>
+		<button class="btn btn-primary">Button primary</button>
+		<button class="btn btn-danger">Button danger</button>
+		<button class="btn btn-outline-primary">Button outline primary</button>
+		<button class="btn btn-outline-success">Button outline success</button>
+	</main>
+
+
+	<script src="../dependencies/jquery.js"></script>
+	<script src="../dependencies/popper.js"></script>
+	<script src="../dependencies/bootstrap.js"></script>
+	<script src="../public/script.js"></script>
+</body>
+
+</html>
