@@ -19,7 +19,6 @@
 
 <body>
 	<main class="container mt-3">
-		<!-- NAVIGATION -->
 		<h1>nav examples</h1>
 		<hr>
 		<nav class="nav justify-content-left">
@@ -126,7 +125,6 @@
 		</nav>
 
 		<hr>
-		<!-- BUTTONS -->
 		<h1>Buttons</h1>
 		<a href="https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp">https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp</a>
 		<h2>All colors</h2>
@@ -258,7 +256,6 @@
 		<span class="spinner-border spinner-border ml-3"></span>
 		<hr>
 
-		<!-- BADGES -->
 		<h1>Badges You<span class="badge badge-danger">Tube</span> </h1>
 		<a href="https://www.w3schools.com/bootstrap4/bootstrap_badges.asp">https://www.w3schools.com/bootstrap4/bootstrap_badges.asp</a>
 		<p>
@@ -273,7 +270,6 @@
 		</p>
 
 
-		<!-- PROGRESS BAR -->
 		<hr>
 		<h1>Progress bar</h1>
 		<div class="progress mt-1">
@@ -308,7 +304,6 @@
 		</div>
 
 
-		<!-- LIST GROUP -->
 		<hr>
 		<h1>List Group</h1>
 		<ul class="list-group">
@@ -320,7 +315,6 @@
 			<li class="list-group-item list-group-item-light">light</li>
 		</ul>
 
-		<!-- BREADCRUMB -->
 		<hr>
 		<h1>Breadcrumb</h1>
 		<span>See in style at the ent of the body how to change the separator</span>
@@ -330,19 +324,206 @@
 			<li class="breadcrumb-item active">Ehrlich</li>
 		</ol>
 
+		<hr>
+		<h1>Jumbotron</h1>
+		<header class="jumbotron">
+			<p>Blablabla</p>
+		</header>
+
+		<hr>
+		<h1>Table</h1>
+		<table class="table">
+			<thead class="table-primary">
+				<th scope="col">Item</th>
+				<th scope="col">Price</th>
+				<th scope="col">Color</th>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Shoe</th>
+					<td>10$</td>
+					<td>red</td>
+				</tr>
+				<tr class="bg-danger text-light">
+					<th scope="row">Computer</th>
+					<td>1000$</td>
+					<td>blue</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		<h1>Cards with rows and columns</h1>
+		<div class="container d-inline-flex justify-content-between">
+			<div class="row">
+				<div class="col-6 col-md-3 mt-3">
+					<section class="card">
+						<div class="card-body ">
+							<img src="../img/e_benisliebling.png"
+								 class="img-fluid card-img"
+								 height="25px"
+								 alt="Logo">
+							<h2 class="card-title">Ehrlich</h2>
+							<p class="card-text">Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln.</p>
+							<a href="#" class="card-link">Details</a>
+							<a href="#" class="card-link">Buchen</a>
+						</div>
+					</section>
+				</div>
+
+				<div class="col-6 col-md-3 mt-3">
+					<section class="card">
+						<div class="card-body">
+							<img src="../img/raffiniert.png"
+								 class="img-fluid card-img rounded-circle"
+								 height="25px"
+								 alt="Logo">
+							<h2 class="card-title">Raffiniert</h2>
+							<p class="card-text">Bresaola Carpaccio mit Rucola, Pistazien und roten Zwiebeln.</p>
+							<a href="#" class="card-link">Details</a>
+							<a href="#" class="card-link">Buchen</a>
+						</div>
+					</section>
+				</div>
+
+				<div class="col-6 col-md-3 mt-3">
+					<section class="card bg-dark">
+						<div class="card-body">
+							<img src="../img/chefschoice.png"
+								 class="img-fluid card-img rounded-circle"
+								 height="25px"
+								 alt="Logo">
+							<h2 class="card-title text-light">Chef's Choice</h2>
+							<p class="card-text text-light">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+							<div class="text-center">
+								<a href="#" class="card-link text-light">Details</a>
+								<a href="#" class="card-link text-light">Buchen</a>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<div class="col-6 col-md-3 mt-3">
+					<section class="card">
+						<div class="card-header">
+							<h2 class="card-title">Chef's Choice</h2>
+						</div>
+						<div class="card-body ">
+							<img src="../img/chefschoice.png"
+								 class="img-fluid card-img rounded-circle"
+								 height="25px"
+								 alt="Logo">
+							<p class="card-text text-center mt-2">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+						</div>
+						<div class="card-footer text-center">
+							<a href="#" class="card-link">Details</a>
+							<a href="#" class="card-link">Buchen</a>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<h1>Cards with card group</h1>
+		<div class="container d-inline-flex justify-content-between">
+			<!-- also try card-group and card-columns (like Pinterest when stacked) -->
+			<div class="card-group">
+				<section class="card">
+					<div class="card-body">
+						<img src="../img/e_benisliebling.png"
+							 class="img-fluid card-img"
+							 height="25px"
+							 alt="Logo">
+						<h2 class="card-title">Ehrlich</h2>
+						<p class="card-text">Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln.</p>
+						<a href="#" class="card-link">Details</a>
+						<a href="#" class="card-link">Buchen</a>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card-body">
+						<img src="../img/raffiniert.png"
+							 class="img-fluid card-img rounded-circle"
+							 height="25px"
+							 alt="Logo">
+						<h2 class="card-title">Raffiniert</h2>
+						<p class="card-text">Bresaola Carpaccio mit Rucola, Pistazien und roten Zwiebeln.</p>
+						<a href="#" class="card-link">Details</a>
+						<a href="#" class="card-link">Buchen</a>
+					</div>
+				</section>
+
+				<section class="card bg-dark">
+					<div class="card-body">
+						<img src="../img/chefschoice.png"
+							 class="img-fluid card-img rounded-circle"
+							 height="25px"
+							 alt="Logo">
+						<h2 class="card-title text-light">Chef's Choice</h2>
+						<p class="card-text text-light">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+						<div class="text-center">
+							<a href="#" class="card-link text-light">Details</a>
+							<a href="#" class="card-link text-light">Buchen</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card-header">
+						<h2 class="card-title">Chef's Choice</h2>
+					</div>
+					<div class="card-body">
+						<img src="../img/chefschoice.png"
+							 class="img-fluid card-img rounded-circle"
+							 height="25px"
+							 alt="Logo">
+						<p class="card-text text-center mt-2">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+					</div>
+					<div class="card-footer text-center">
+						<a href="#" class="card-link">Details</a>
+						<a href="#" class="card-link">Buchen</a>
+					</div>
+				</section>
+			</div>
+		</div>
+
+
+		<hr>
+		<h1>Media containers</h1>
+		<div class="container">
+			<section class="media">
+				<img src="../img/e_benisliebling.png"
+					 class=" mr-5 img-fluid w-25"
+					 height="25px"
+					 alt="Logo">
+				<div class="media-body">
+					<h2 class="card-title">Ehrlich</h2>
+					<p class="card-text">Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln.</p>
+					<a href="#">Details</a>
+					<a href="#">Buchen</a>
+				</div>
+			</section>
+
+			<section class="media">
+				<img src="../img/raffiniert.png"
+					 class=" mr-5 img-fluid w-25"
+					 height="25px"
+					 alt="Logo">
+				<div class="media-body">
+					<h2 class="card-title">Raffiniert</h2>
+					<p class="card-text">Bresaola Carpaccio mit Rucola, Pistazien und roten Zwiebeln.</p>
+					<a href="#">Details</a>
+					<a href="#">Buchen</a>
+				</div>
+			</section>
+		</div>
+
+
+
 		<div class="mb-5"></div>
 	</main>
-
-
-
-
-
-
-
-
-
-
-
 
 	<script src="../dependencies/jquery.js"></script>
 	<script src="../dependencies/popper.js"></script>
