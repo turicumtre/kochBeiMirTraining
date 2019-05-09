@@ -10,6 +10,10 @@
 	<title>KochBeiMir</title>
 	<link href="../dependencies/bootstrap.css"
 		  rel="stylesheet">
+	<link rel="stylesheet"
+		  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+		  crossorigin="anonymous">
 	<link href="style.css"
 		  rel="stylesheet">
 	</link>
@@ -18,7 +22,6 @@
 </head>
 
 <body>
-	<!-- NAVIGATION -->
 	<div class="container text-center sticky-top background-white">
 		<nav id="navbarSite"
 			 class="navbar navbar-light bg-light navbar-expand-sm">
@@ -31,35 +34,17 @@
 						data-toggle="collapse"
 						data-target="#toggledNavigation"><span class="navbar-toggler-icon"></span></button>
 
-
 				<div class="navbar-nav collapse navbar-collapse"
 					 id="toggledNavigation">
-					<a href="index.html" class="nav-item nav-link">Home</a>
-					<a href="about.html" class="nav-item nav-link ">Über uns</a>
-
-					<!-- Dropdown -->
-					<div class="dropdown">
-						<a class="nav-item nav-link dropdown-toggle"
-										 data-toggle="dropdown"
-										 id="menuListDropdown"
-										 aria-haspopup="true"
-										 aria-expanded="false"
-										 style="cursor: pointer">Menus</a>
-						<div class="dropdown-menu"
-							 aria-labelledby="menuListDropdown">
-							<a class="dropdown-item" href="#">Ehrlich</a>
-							<a class="dropdown-item" href="#">Raffiniert</a>
-							<a class="dropdown-item" href="#">Chef's Choice</a>
-						</div>
-					</div>
-					<a href="book.html" class="nav-item nav-link active">Buchen</a>
+					<a href="#" class="nav-item nav-link active">Home</a>
+					<a href="#request" class="nav-item nav-link">Buchen</a>
 				</div>
 			</div>
 		</nav>
 	</div>
 
 	<article class="container">
-		<img src="../img/titelbild.png"
+		<img src="../img/knife_cropped.jpg"
 			 class="img-fluid w-100"
 			 id="top"
 			 alt="Titelbild">
@@ -105,8 +90,261 @@
 					denn dein Koch übernimmt auch das Aufräumen nach dem Kochen.</p>
 			</div>
 		</div>
-		<nav class="float-clear text-center d-print-none"><a href="#top">Nach oben</a></nav>
+
 	</article>
+
+	<article class="container"
+			 id="buchen"
+			 style="height:300px">
+		<img src="../img/chef_crop.jpg"
+			 class="w-100 img-fluid"
+			 alt="Contact">
+
+		<div class="text-center mt-5"
+			 id="menus">
+			<h1 class="display-3">Unsere Menus</h1>
+		</div>
+
+		<div class="d-inline-flex justify-content-between mt-5">
+			<div class="row">
+				<div class="col col-sm-4 col-6 mt-2">
+					<section class="card">
+						<div class="card-body text-center">
+							<img src="../img/e_benisliebling.png"
+								 class="card-img rounded-circle w-75">
+							<h2 class="h4 card-title mt-3">Ehrlich</h2>
+							<p class="card-text d-none d-md-block">Lauwarmer Babyspinat Salat mit Feta, Feigen und
+								Granatäpfeln.</p>
+							<span>ab <b>70</b> Fr. / Pers.</span>
+							<button class="ml-2 mt-2 mt-sm-0 btn btn-dark"
+									data-toggle="modal"
+									data-target="#modalmenu1">Details</button>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-sm-4 col-6 mt-2">
+					<section class="card">
+						<div class="card-body text-center">
+							<img src="../img/raffiniert.png"
+								 class="card-img rounded-circle w-75">
+							<h2 class="h4 card-title mt-3">Raffiniert</h2>
+							<p class="card-text d-none d-md-block">Bresaola Carpaccio mit Rucola, Pistazien und roten
+								Zwiebeln.</p>
+							<span>ab <b>90</b> Fr. / Pers.</span>
+							<button class="ml-2 mt-2 mt-sm-0 btn btn-dark"
+									data-toggle="modal"
+									data-target="#modalmenu2">Details</button>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-sm-4 col-6 mt-2">
+					<section class="card">
+						<div class="card-body text-center">
+							<img src="../img/chefschoice.png"
+								 class="card-img rounded-circle w-75">
+							<h2 class="h4 card-title mt-3">Chef's Choice</h2>
+							<p class="card-text d-none d-md-block">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+							<span>ab <b>150</b> Fr. / Pers.</span>
+							<button class="ml-2 mt-2 mt-sm-0 btn btn-dark"
+									data-toggle="modal"
+									data-target="#modalmenu3">Details</button>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<img src="../img/cook.jpg"
+			 class="img-fluid w-100 mt-3">
+
+		<div class="text-center mt-5"
+			 id="request">
+			<h1 class="display-3">Anfrage</h1>
+		</div>
+
+		<form class="container mt-5"
+			  style="min-width: 300px; max-width: 600px"
+			  onsubmit="alert('Vielen Dank für die Bestellung')">
+			<fieldset class="form-group">
+				<div class="form-group form-row">
+					<label class="col-form-label text-md-right col-md-2 d-none d-md-inline"
+						   for="ownername">Name</label>
+					<div class="col-md-5 col-6">
+						<input class="form-control"
+							   type="text"
+							   id="ownername"
+							   placeholder="Vorname">
+					</div>
+					<div class="col-md-5 col-6">
+						<input class="form-control"
+							   type="text"
+							   id="ownername"
+							   placeholder="Nachname">
+					</div>
+				</div>
+
+				<div class="form-group form-row">
+					<label class="col-form-label text-md-right col-md-2 d-none d-md-inline"
+						   for="street">Addresse</label>
+					<div class="col-md-10">
+						<input class="form-control"
+							   type="text"
+							   id="street"
+							   placeholder="Strasse / Nr.">
+					</div>
+					<div class="col-6 col-md-5 offset-md-2 mt-1">
+						<input class="form-control"
+							   type="text"
+							   id="zip"
+							   placeholder="PLZ">
+					</div>
+					<div class="col-6 col-md-5 mt-1">
+						<input class="form-control"
+							   type="text"
+							   id="city"
+							   placeholder="Ort">
+					</div>
+				</div>
+
+				<div class="form-group form-row">
+					<label class="col-form-label text-md-right col-md-2 d-none d-md-inline"
+						   for="street">Menu</label>
+					<div class="col-md-10">
+						<div class="btn-group btn-block">
+							<button type="button"
+									id="menu1"
+									onclick="toggleActive(this)"
+									class="btn btn-outline-dark active">Ehrlich</button>
+							<button type="button"
+									id="menu2"
+									onclick="toggleActive(this)"
+									class="btn btn-outline-dark">Raffiniert</button>
+							<button type="button"
+									id="menu3"
+									onclick="toggleActive(this)"
+									class="btn btn-outline-dark">Chef's Choice</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-row">
+					<div class="col-md-10 offset-md-2">
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input type="checkbox"
+									   class="form-check-input"> Laktosefrei
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input type="checkbox"
+									   class="form-check-input"> Glutenfrei
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input type="checkbox"
+									   class="form-check-input"> Vegetarisch
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<button class="btn btn-dark float-right"
+						type="submit">Anfrage absenden</button>
+			</fieldset>
+		</form>
+	</article>
+
+	<!-- MODAL -->
+	<div class="modal fade"
+		 id="modalmenu1">
+		<div class="modal-dialog">
+			<div class="modal-content bg-dark text-light">
+				<div class="modal-header">
+					<h2 class="modal-title">Ehrlich</h2>
+					<button type="button"
+							class="close text-light"
+							data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body text-center">
+					<img class="my-4"
+						 src="../img/e_benisliebling.png">
+					<div class="mt-2 mb-5">Lauwarmer Babyspinat Salat mit Feta, Feigen und
+						Granatäpfeln
+						<br> * * * <br>
+						Mais-Chillisuppe mit Knoblauchbrot
+						<br> * * * <br>
+						Marokkanischer Couscous Salat mit Dörrobst
+						<br> * * * <br>
+						Gemüseeintopf mit Linsen und Kichererbsen
+						<br> * * * <br>
+						Saisonales Tiramisu (Bsp. Zwetschgen, Erdbeere)</div>
+					<span class="h3">ab <b>70</b> Fr. / Pers.
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="modal fade"
+		 id="modalmenu2">
+		<div class="modal-dialog">
+			<div class="modal-content bg-dark text-light">
+				<div class="modal-header">
+					<h2 class="modal-title">Raffiniert</h2>
+					<button type="button"
+							class="close text-light"
+							data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body text-center">
+					<img class="my-4"
+						 src="../img/raffiniert.png">
+					<div class="mt-2 mb-5">Bresaola Carpaccio mit Rucola, Pistazien und roten Zwiebeln
+						<br> * * * <br>
+						Thaicurry Suppe mit Zitronengrasschaum
+						<br> * * * <br>
+						Mit Feigensenf glasierte Entenbrust auf Orangen-Fenchel-Salat
+						<br> * * * <br>
+						Thunfischsteak im Sesammantel mit schwarzem Venere Reis, Kurkumafenchel und Datteltomaten
+						<br> * * * <br>
+						Tarte Tatin mit Zimtrahm</div>
+					<span class="h3">ab <b>90</b> Fr. / Pers.
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="modal fade"
+		 id="modalmenu3">
+		<div class="modal-dialog">
+			<div class="modal-content bg-dark text-light">
+				<div class="modal-header">
+					<h2 class="modal-title">Chef's Choice</h2>
+					<button type="button"
+							class="close text-light"
+							data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body text-center">
+					<img class="my-4"
+						 src="../img/chefschoice.png">
+					<div class="mt-2 mb-5">Papaya Salat mit gebratenen Jakobsmuscheln
+						<br> * * * <br>
+						Rindsbouillon mit Einlage
+						<br> * * * <br>
+						Geräucherter Balik-Lachs mit Schnittlauch Crème fraîche, Brotchips und Zitrone
+						<br> * * * <br>
+						Rindsfilet im Dattelspeck-Mantel mit dreierlei Stock (Süsskartoffeln, Randen, Sellerie), Jus und
+						Gemüse Sticks
+						<br> * * * <br>
+						Schokoladen Soufflé mit Mangocoulis</div>
+					<span class="h3">ab <b>150</b> Fr. / Pers.
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 
 
 	<script src="../dependencies/jquery.js"></script>
