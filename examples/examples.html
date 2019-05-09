@@ -10,8 +10,6 @@
 	<title>KochBeiMir</title>
 	<link href="../dependencies/bootstrap.css"
 		  rel="stylesheet">
-	<link href="style.css"
-		  rel="stylesheet">
 	</link>
 	<link rel="icon"
 		  href="../img/favicon.jpg">
@@ -625,6 +623,103 @@
 			</fieldset>
 		</form>
 
+		<hr>
+		<h1>Tooltip</h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_tooltip.asp">https://www.w3schools.com/bootstrap4/bootstrap_tooltip.asp</a>
+		<div class="container">Lorem ipsum
+			<span class="text-primary pointer"
+				  href="#"
+				  data-toggle="tooltip"
+				  data-trigger="hover"
+				  data-placement="top"
+				  title="Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln.">Hover
+			</span>
+			sit amet,
+			<span class="text-primary pointer"
+				  href="#"
+				  data-toggle="tooltip"
+				  data-trigger="click"
+				  data-placement="top"
+				  title="Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln.">click
+			</span>
+			consectetur adipiscing
+			elit, sed do eiusmod tempor incididunt
+			ut labore et dolore magna aliqua. </div>
+		<h1>Popovers</h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_popover.asp">https://www.w3schools.com/bootstrap4/bootstrap_popover.asp</a>
+		<h1>Alert</h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp">https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp</a>
+		<div class="alert alert-info">
+			<p>consectetur adipiscing
+				elit, sed do eiusmod tempor incididunt
+				ut labore et dolore magna aliqua.</p>
+		</div>
+		<div class="alert alert-warning">
+			<p>consectetur adipiscing
+				elit, sed do eiusmod tempor incididunt
+				ut labore et dolore magna aliqua.</p>
+		</div>
+		<h1>Dropdown</h1>
+		<a href="https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp">https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp</a>
+
+		<h1>Collapse accordion</h1>
+		<a href="https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_collapsible_accordion&stacked=h">https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_collapsible_accordion&stacked=h</a>
+		<p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible
+			elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#collapseOne">
+						Collapsible Group Item #1
+					  </a>
+				</div>
+				<div id="collapseOne"
+					 class="collapse show"
+					 data-parent="#accordion">
+					<div class="card-body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+					  Collapsible Group Item #2
+					</a>
+				</div>
+				<div id="collapseTwo"
+					 class="collapse"
+					 data-parent="#accordion">
+					<div class="card-body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+						Collapsible Group Item #3
+					  </a>
+				</div>
+				<div id="collapseThree"
+					 class="collapse"
+					 data-parent="#accordion">
+					<div class="card-body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h1>Scrollspy</h1>
+		<p>Top Site navigation that smoothly scrolls to the clicked part of the website</p>
+		<a href="https://www.linkedin.com/learning/bootstrap-4-essential-training/quiz/58e3d9209de3e14564e2fd61">https://www.linkedin.com/learning/bootstrap-4-essential-training/quiz/58e3d9209de3e14564e2fd61</a>
 
 
 		<div class="mb-5"></div>
@@ -634,9 +729,20 @@
 	<script src="../dependencies/popper.js"></script>
 	<script src="../dependencies/bootstrap.js"></script>
 
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip({
+			});
+		});
+	</script>
+
 	<style>
 		.breadcrumb-item+.breadcrumb-item::before {
 			content: '/'
+		}
+
+		.pointer {
+			cursor: pointer;
 		}
 	</style>
 </body>
