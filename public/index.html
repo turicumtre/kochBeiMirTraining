@@ -10,6 +10,8 @@
 	<title>KochBeiMir</title>
 	<link href="../lib/bootstrap.css"
 		  rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Leckerli+One"
+		  rel="stylesheet">
 	<link rel="stylesheet"
 		  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 		  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
@@ -26,11 +28,11 @@
 		<nav id="navbarSite"
 			 class="navbar navbar-light bg-light navbar-expand-sm">
 			<div class="container">
-				<a href="index.html" class="navbar-brand"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+				<a href="#" class="navbar-brand"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
 
 				<!-- Hamburger Button -->
 				<button class="navbar-toggler"
-						type="button"
+						type="btn"
 						data-toggle="collapse"
 						data-target="#toggledNavigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -38,7 +40,7 @@
 					 id="toggledNavigation">
 					<a href="#" class="nav-item nav-link">Home</a>
 					<a href="#menus" class="nav-item nav-link">Menus</a>
-					<a href="#request" class="nav-item nav-link">Buchen</a>
+					<a href="#book" class="nav-item nav-link">Buchen</a>
 				</div>
 			</div>
 		</nav>
@@ -50,7 +52,7 @@
 			 id="top"
 			 alt="Titelbild">
 		<div class="text-center mt-5">
-			<h1 class="display-3">Dein Koch</h1>
+			<h1 class="display-4">Dein Koch</h1>
 		</div>
 		<div class="row mt-5">
 			<div class="text-center col-6 col-md-3">
@@ -58,7 +60,7 @@
 					 height="100px"
 					 class="center-img"
 					 alt="Kauft ein">
-				<h2>kauft ein</h2>
+				<h2 class="h3">kauft ein</h2>
 				<p>Wähle dein Menü nach Lust und Laune aus! Es ist nicht nötig, dass du die Zutaten
 					schon Zuhause auf Vorrat hast oder selber besorgst, denn dein Koch kauft alles Benötigte für dich
 					ein.</p>
@@ -68,7 +70,7 @@
 					 height="100px"
 					 class="center-img"
 					 alt="Kocht">
-				<h2>kocht bei dir</h2>
+				<h2 class="h3">kocht bei dir</h2>
 				<p>Lass dich verwöhnen und geniesse die Zeit mit deinen Gästen, während dein Koch für euch in deiner
 					Küche ein leckeres Essen zubereitet.</p>
 			</div>
@@ -77,7 +79,7 @@
 					 height="100px"
 					 class="center-img"
 					 alt="Serviert">
-				<h2>serviert</h2>
+				<h2 class="h3">serviert</h2>
 				<p>Geniesse es, dich nicht selbst um die Bedienung deiner Gäste kümmern zu müssen und lass dir das Essen
 					vom Koch servieren - wie im Restaurant.</p>
 			</div>
@@ -86,23 +88,21 @@
 					 height="100px"
 					 class="center-img"
 					 alt="Räumt auf">
-				<h2>räumt auf</h2>
+				<h2 class="h3">räumt auf</h2>
 				<p>Um deinen Anlass perfekt zu machen, darfst du dich nach dem Essen über eine saubere Küche freuen,
 					denn dein Koch übernimmt auch das Aufräumen nach dem Kochen.</p>
 			</div>
 		</div>
-
 	</article>
 
 	<article class="container"
-			 id="menus"
-			 style="height:300px">
+			 id="menus">
 		<img src="../img/chef_crop.jpg"
 			 class="w-100 img-fluid"
 			 alt="Contact">
 
 		<div class="text-center mt-5">
-			<h1 class="display-3">Unsere Menus</h1>
+			<h1 class="display-4">Menus</h1>
 		</div>
 
 		<div class="d-inline-flex justify-content-between mt-5">
@@ -110,11 +110,12 @@
 				<div class="col col-sm-4 col-6 mt-2">
 					<section class="card border-0">
 						<div class="card-body text-center">
-							<img src="../img/e_benisliebling.png"
-								 class="card-img rounded-circle w-75">
-							<h2 class="h4 card-title mt-3">Ehrlich</h2>
-							<p class="card-text d-none d-md-block">Lauwarmer Babyspinat Salat mit Feta, Feigen und
-								Granatäpfeln.</p>
+							<img src="../img/ehrlich_square.jpg"
+								 class="card-img rounded-circle">
+							<h2 class="card-title mt-3 menu-title">Ehrlich</h2>
+							<p class="card-text d-none d-md-block">Orientalischer 5-Gänger mit <br>
+								italienischem Dessert.
+							</p>
 							<span>ab <b>70</b> Fr. / Pers.</span>
 							<button class="ml-2 mt-2 mt-sm-0 btn btn-dark"
 									data-toggle="modal"
@@ -127,8 +128,8 @@
 					<section class="card border-0">
 						<div class="card-body text-center">
 							<img src="../img/raffiniert.png"
-								 class="card-img rounded-circle w-75">
-							<h2 class="h4 card-title mt-3">Raffiniert</h2>
+								 class="card-img rounded-circle">
+							<h2 class="card-title mt-3 menu-title">Raffiniert</h2>
 							<p class="card-text d-none d-md-block">Bresaola Carpaccio mit Rucola, Pistazien und roten
 								Zwiebeln.</p>
 							<span>ab <b>90</b> Fr. / Pers.</span>
@@ -143,9 +144,9 @@
 					<section class="card border-0">
 						<div class="card-body text-center">
 							<img src="../img/chefschoice.png"
-								 class="card-img rounded-circle w-75">
-							<h2 class="h4 card-title mt-3">Chef's Choice</h2>
-							<p class="card-text d-none d-md-block">Papaya Salat mit gebratenen Jakobsmuscheln.</p>
+								 class="card-img rounded-circle">
+							<h2 class="card-title mt-3 menu-title">Chef's Choice</h2>
+							<p class="card-text d-none d-md-block">Meh fancy alles. <br> Und huere tüür.</p>
 							<span>ab <b>150</b> Fr. / Pers.</span>
 							<button class="ml-2 mt-2 mt-sm-0 btn btn-dark"
 									data-toggle="modal"
@@ -161,14 +162,15 @@
 			 class="img-fluid w-100 mt-3">
 
 		<div class="text-center mt-5"
-			 id="request">
-			<h1 class="display-3">Anfrage</h1>
+			 id="book">
+			<h1 class="display-4">Buchungsanfrage</h1>
 		</div>
 
 		<form class="container mt-5"
 			  style="min-width: 300px; max-width: 700px"
-			  onsubmit="alert('Vielen Dank für die Bestellung')">
-			<fieldset class="form-group">
+			  onsubmit="sendForm(this)">
+			<fieldset id="requestform"
+					  class="form-group">
 				<div class="form-group form-row">
 					<label class="col-form-label text-md-right col-md-2 d-none d-md-inline"
 						   for="ownername">Name</label>
@@ -253,35 +255,77 @@
 				</div>
 
 				<button class="btn btn-dark float-right"
+						id="formsendbutton"
 						type="submit">Anfrage absenden</button>
 			</fieldset>
+			<header id="formthankyou"
+					class="jumbotron d-none">
+				<div class="row">
+					<div class="col-3 text-center">
+						<i class="fas fa-4x fa-laugh-wink"></i>
+					</div>
+					<div class="col-9 pt-4">
+						<p>Vielen Dank für Deine Anfrage. Wir melden uns bald. </p>
+					</div>
+				</div>
+			</header>
 		</form>
 	</article>
+
+	<footer style="height: 250px"
+			class="mt-5 bg-foooter text-gray">
+		<div class="row m-0 p-0">
+			<div class="m-0 p-0 col col-md-3 d-none d-md-block">
+				<img src="../img/footer_left.png"
+					 style="height: 250px"
+					 class="p-0 m-0 img-fluid float-left">
+			</div>
+			<div class="col-5 offset-1 offset-md-0 col-md-3 px-3 py-5">
+				<span class="h3">KOCH BEI MIR</span><br><br>
+				8000 Zürich<br>
+				info@kochbeimir.ch <br>
+				+41 (0)79 350 63 36
+			</div>
+			<div class="col-5 col-md-3 px-3 py-5">
+				<a style="color: inherit; cursor: pointer" data-toggle="modal" data-target="#notimplemented">Über Uns</a><br>
+				<a style="color: inherit; cursor: pointer" data-toggle="modal" data-target="#notimplemented">Impressum</a><br>
+				<a style="color: inherit; cursor: pointer" data-toggle="modal" data-target="#notimplemented">Disclaimer Website</a><br>
+				<a style="color: inherit; cursor: pointer" data-toggle="modal" data-target="#notimplemented">Datenschutz</a><br>
+				<p class="pt-2">&copy; 2019</p>
+			</div>
+			<div class="p-0 m-0 col-md-3 d-none d-md-block">
+				<img src="../img/footer_right.png"
+					 style="height: 250px"
+					 class="p-0 m-0 img-fluid float-right">
+			</div>
+		</div>
+	</footer>
 
 	<!-- MODAL -->
 	<div class="modal fade"
 		 id="modalmenu1">
 		<div class="modal-dialog">
-			<div class="modal-content bg-dark text-light">
-				<div class="modal-header">
-					<h2 class="modal-title">Ehrlich</h2>
+			<div class="modal-content text-center">
+				<div class="modal-header bg-dark text-light">
+					<h2 class="modal-title menu-title">Ehrlich</h2>
 					<button type="button"
 							class="close text-light"
 							data-dismiss="modal">&times;</button>
 				</div>
-				<div class="modal-body text-center">
-					<img class="my-4"
-						 src="../img/e_benisliebling.png">
-					<div class="mt-2 mb-5">Lauwarmer Babyspinat Salat mit Feta, Feigen und
-						Granatäpfeln
-						<br> * * * <br>
-						Mais-Chillisuppe mit Knoblauchbrot
-						<br> * * * <br>
-						Marokkanischer Couscous Salat mit Dörrobst
-						<br> * * * <br>
-						Gemüseeintopf mit Linsen und Kichererbsen
-						<br> * * * <br>
-						Saisonales Tiramisu (Bsp. Zwetschgen, Erdbeere)</div>
+				<div class="modal-body">
+					<img class="p-0 m-0 img-fluid rounded"
+						 src="../img/ehrlich_wide.jpg">
+					<div class="mt-2 mb-5"
+						 style="  font-family: 'Trebuchet MS', Helvetica, sans-serif">
+						<br>
+						Lauwarmer Babyspinat Salat mit Feta, Feigen und Granatäpfeln <br>
+						<b>***</b> <br> Mais-Chillisuppe mit Knoblauchbrot <br>
+						<b>***</b> <br> Marokkanischer Couscous Salat mit Dörrobst <br>
+						<b>***</b> <br> Gemüseeintopf mit Linsen und Kichererbsen <br>
+						<b>***</b> <br> Saisonales Tiramisu (Bsp. Zwetschgen, Erdbeere) <br>
+					</div>
+					<span class="font-weight-bold"><i class="fas fa-check"></i> Vegetarisch</span>
+					<hr>
 					<span class="h3">ab <b>70</b> Fr. / Pers.
 				</div>
 			</div>
@@ -341,6 +385,27 @@
 						Schokoladen Soufflé mit Mangocoulis</div>
 					<span class="h3">ab <b>150</b> Fr. / Pers.
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade"
+		 id="notimplemented">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title">Im Aufbau </h2>
+					<button type="button"
+							class="close"
+							data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body text-center">
+					<i class="fas fa-4x fa-tools"></i>
+					<p class="mt-5 h3">Hier fehlt noch was ;)</p>
+				</div>
+				<div class="modal-footer"><button type="button"
+							class="btn btn-dark"
+							data-dismiss="modal">Schliessen</button></div>
 			</div>
 		</div>
 	</div>

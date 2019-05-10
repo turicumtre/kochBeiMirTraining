@@ -5,3 +5,14 @@ function toggleActive(selectedItem) {
 
 	selectedItem.classList.add("active");
 }
+
+function sendForm(e) {
+	return false;
+}
+
+$("#formsendbutton").click(function(e) {
+	document.getElementById("formthankyou").classList.toggle("d-none");
+	document.getElementById("requestform").classList.toggle("d-none");
+	e.preventDefault();
+	// e.stopPropagation();
+});
