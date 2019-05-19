@@ -244,7 +244,7 @@
         <header id="formthankyou" class="jumbotron d-none">
           <div class="row">
             <div class="col-3 text-center">
-              <i class="fas fa-4x fa-laugh-wink"></i>
+              <font-awesome-icon icon="laugh-wink" class="fa-4x"></font-awesome-icon>
             </div>
             <div class="col-9 pt-4">
               <p>Vielen Dank für Deine Anfrage. Wir melden uns bald.</p>
@@ -333,7 +333,7 @@
               <br>
             </div>
             <span class="font-weight-bold">
-              <i class="fas fa-check"></i> Vegetarisch
+              <font-awesome-icon icon="check"></font-awesome-icon>&nbsp;Vegetarisch
             </span>
             <hr>
             <span class="h3">
@@ -406,7 +406,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body text-center">
-            <i class="fas fa-4x fa-tools"></i>
+            <font-awesome-icon icon="tools" class="fa-4x"></font-awesome-icon>
             <p class="mt-5 h3">Hier fehlt noch was ;)</p>
           </div>
           <div class="modal-footer">
@@ -439,12 +439,13 @@
 //   // e.stopPropagation();
 // });
 
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
   name: "Home",
   props: {
     msg: String
   },
-  components: {}
+  components: { FontAwesomeIcon }
 };
 </script>
 
