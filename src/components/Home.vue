@@ -420,6 +420,25 @@
 </template>
 
 <script>
+// function toggleActive(selectedItem) {
+//   for (var i = 1; i <= 3; i++) {
+//     document.getElementById("menu" + i).classList.remove("active");
+//   }
+
+//   selectedItem.classList.add("active");
+// }
+
+// function sendForm(e) {
+//   return false;
+// }
+
+// $("#formsendbutton").click(function(e) {
+//   document.getElementById("formthankyou").classList.toggle("d-none");
+//   document.getElementById("requestform").classList.toggle("d-none");
+//   e.preventDefault();
+//   // e.stopPropagation();
+// });
+
 export default {
   name: "Home",
   props: {
@@ -430,4 +449,31 @@ export default {
 </script>
 
 <style>
+/* General */
+html {
+  scroll-behavior: smooth;
+}
+.float-clear {
+  clear: both;
+}
+
+/* Navigation */
+.background-white {
+  background: white;
+}
+
+/* Footer */
+.dividor {
+  height: 5vh;
+  background: url(../../img/holiday.jpg) center center;
+}
+
+.bg-foooter {
+  background: #030303;
+  color: #7f7f7f;
+}
+
+.menu-title {
+  font-family: "Leckerli One", cursive;
+}
 </style>
