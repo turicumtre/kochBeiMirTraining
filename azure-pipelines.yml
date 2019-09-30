@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Node.js'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'kochBeiMirTraining/dist'
+    rootFolderOrFile: 'vue-app/dist'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
