@@ -19,39 +19,42 @@
           </button>
 
           <div class="navbar-nav collapse navbar-collapse" id="toggledNavigation">
+            <a href="#köche" class="nav-item nav-link">Home</a>
             <a href="#menus" class="nav-item nav-link">Menus</a>
-            <a href="#book" class="nav-item nav-link">Buchen</a>
+            <a href="#contact" class="nav-item nav-link">Kontakt</a>
           </div>
         </div>
       </nav>
     </div>
 
     <article class="container">
+		<a class="anchor" id="köche"></a>
       <img src="../../img/7cooks.png" class="img-fluid w-100" id="top" alt="Titelbild">
 
       <div class="text-center mt-5">
         <h1 class="display-4">Dein Koch...</h1>
       </div>      <div class="row mt-5">
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/static/deinkoch2.jpg" height="300px" class="center-img dein-koch-img" alt="Kocht">
+          <img src="../../img/static/deinkoch2.jpg" class="dein-koch-img" alt="Kauft ein">
           <h2 class="h3 font2">Kauft ein</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/static/deinkoch3.jpg" height="300px" class="center-img dein-koch-img" alt="Serviert">
+          <img src="../../img/static/deinkoch3.jpg" class="dein-koch-img" alt="Serviert">
           <h2 class="h3 font2">Deckt den Tisch</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/static/deinkoch4.jpg" height="300px" class="center-img dein-koch-img" alt="Räumt auf">
+          <img src="../../img/static/deinkoch4.jpg" class="dein-koch-img" alt="Kocht">
           <h2 class="h3 font2">Kocht</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/static/deinkoch6.jpg" height="300px" class="center-img dein-koch-img" alt="Räumt auf">
+          <img src="../../img/static/deinkoch6.jpg" class="dein-koch-img" alt="Räumt auf">
           <h2 class="h3 font2">Räumt auf</h2>
         </div>
       </div>
     </article>
 
-    <article class="container" id="menus">
+    <article class="container">
+		<a class="anchor" id="menus"></a>
       <div class="text-center mt-5">
         <h1 class="display-4">1. Stelle ein Menu zusammen</h1>
       </div>
@@ -119,8 +122,8 @@
 
       <img src="../../img/meatballs.jpg" class="img-fluid w-100 mt-3">
 
-      <div class="text-center mt-5" id="book">
-        <h1 class="display-4">Buchungsanfrage</h1>
+      <div class="text-center mt-5" id="contact">
+        <h1 class="display-4">Kontakt</h1>
       </div>
 
       <form
@@ -453,5 +456,15 @@ html {
 	  -webkit-filter: grayscale(20%); /* Safari 6.0 - 9.0 */
 	  filter: grayscale(20%) brightness(80%);
 	    border-radius: 10%;
+		float:middle;
+		width:200px;
+		height:300px
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
 }
 </style>
