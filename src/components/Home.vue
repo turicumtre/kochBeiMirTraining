@@ -28,61 +28,32 @@
 
     <article class="container">
       <img src="../../img/7cooks.png" class="img-fluid w-100" id="top" alt="Titelbild">
+
       <div class="text-center mt-5">
-        <h1 class="display-4">Dein Koch</h1>
-      </div>
-      <div class="row mt-5">
+        <h1 class="display-4">Dein Koch...</h1>
+      </div>      <div class="row mt-5">
         <div class="text-center col-6 col-md-3">
-          <img
-            src="../../img/kauftein-300x300.jpeg"
-            height="100px"
-            class="center-img"
-            alt="Kauft ein"
-          >
-          <h2 class="h3">kauft ein</h2>
-          <p>
-            Wähle dein Menü nach Lust und Laune aus! Es ist nicht nötig, dass du die Zutaten
-            schon Zuhause auf Vorrat hast oder selber besorgst, denn dein Koch kauft alles Benötigte für dich
-            ein.
-          </p>
+          <img src="../../img/static/deinkoch2.jpg" height="300px" class="center-img dein-koch-img" alt="Kocht">
+          <h2 class="h3 font2">Kauft ein</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/kocht-300x300.jpg" height="100px" class="center-img" alt="Kocht">
-          <h2 class="h3">kocht bei dir</h2>
-          <p>
-            Lass dich verwöhnen und geniesse die Zeit mit deinen Gästen, während dein Koch für euch in deiner
-            Küche ein leckeres Essen zubereitet.
-          </p>
+          <img src="../../img/static/deinkoch3.jpg" height="300px" class="center-img dein-koch-img" alt="Serviert">
+          <h2 class="h3 font2">Deckt den Tisch</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img src="../../img/serviert.jpg" height="100px" class="center-img" alt="Serviert">
-          <h2 class="h3">serviert</h2>
-          <p>
-            Geniesse es, dich nicht selbst um die Bedienung deiner Gäste kümmern zu müssen und lass dir das Essen
-            vom Koch servieren - wie im Restaurant.
-          </p>
+          <img src="../../img/static/deinkoch4.jpg" height="300px" class="center-img dein-koch-img" alt="Räumt auf">
+          <h2 class="h3 font2">Kocht</h2>
         </div>
         <div class="text-center col-6 col-md-3">
-          <img
-            src="../../img/raeumtauf-300x300.jpg"
-            height="100px"
-            class="center-img"
-            alt="Räumt auf"
-          >
-          <h2 class="h3">räumt auf</h2>
-          <p>
-            Um deinen Anlass perfekt zu machen, darfst du dich nach dem Essen über eine saubere Küche freuen,
-            denn dein Koch übernimmt auch das Aufräumen nach dem Kochen.
-          </p>
+          <img src="../../img/static/deinkoch6.jpg" height="300px" class="center-img dein-koch-img" alt="Räumt auf">
+          <h2 class="h3 font2">Räumt auf</h2>
         </div>
       </div>
     </article>
 
     <article class="container" id="menus">
-      <img src="../../img/patato.jpg" class="w-100 img-fluid" alt="Contact">
-
       <div class="text-center mt-5">
-        <h1 class="display-4">Menus</h1>
+        <h1 class="display-4">1. Stelle ein Menu zusammen</h1>
       </div>
 
       <div class="d-inline-flex justify-content-between mt-5">
@@ -91,7 +62,7 @@
             <section class="card border-0">
               <div class="card-body text-center">
                 <img src="../../img/ehrlich_square.jpg" class="card-img rounded-circle">
-                <h2 class="card-title mt-3 menu-title">Ehrlich</h2>
+                <h2 class="card-title mt-3 font2">Ehrlich</h2>
                 <p class="card-text d-none d-md-block">
                   Orientalischer 5-Gänger mit
                   <br>italienischem Dessert.
@@ -110,7 +81,7 @@
             <section class="card border-0">
               <div class="card-body text-center">
                 <img src="../../img/raffiniert.png" class="card-img rounded-circle">
-                <h2 class="card-title mt-3 menu-title">Raffiniert</h2>
+                <h2 class="card-title mt-3 font2">Raffiniert</h2>
                 <p class="card-text d-none d-md-block">
                   Bresaola Carpaccio mit Rucola, Pistazien und roten
                   Zwiebeln.
@@ -129,7 +100,7 @@
             <section class="card border-0">
               <div class="card-body text-center">
                 <img src="../../img/chefschoice.png" class="card-img rounded-circle">
-                <h2 class="card-title mt-3 menu-title">Chef's Choice</h2>
+                <h2 class="card-title mt-3 font2">Chef's Choice</h2>
                 <p class="card-text d-none d-md-block">
                   Meh fancy alles.
                   <br>Und huere tüür.
@@ -311,7 +282,7 @@
       <div class="modal-dialog">
         <div class="modal-content text-center">
           <div class="modal-header bg-dark text-light">
-            <h2 class="modal-title menu-title">Ehrlich</h2>
+            <h2 class="modal-title font2">Ehrlich</h2>
             <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
@@ -474,7 +445,13 @@ html {
   color: #7f7f7f;
 }
 
-.menu-title {
+.font2 {
   font-family: "Leckerli One", cursive;
+}
+
+.dein-koch-img {
+	  -webkit-filter: grayscale(20%); /* Safari 6.0 - 9.0 */
+	  filter: grayscale(20%) brightness(80%);
+	    border-radius: 10%;
 }
 </style>
