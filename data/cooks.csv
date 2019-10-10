@@ -1,0 +1,8 @@
+﻿id;img;firstName;lastName;nameOnPlatform;descrGerman;phone;mail;region[]
+1;alauchiger;Angela;Lauchiger;Angi;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+2;rkuenz;Daniele;Di Dominicis;Reto;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+3;lzen;Li;Zen;Li;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+4;aspumoni;Angelo;Spumoni;Angelo;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+5;rkuenz;Reto;Kuenz;Reto;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+6;rschuppisser;Rafael;Schupisser;Raffi;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich
+7;gfrizzante;Giorgio;Frizzante;Giorgio;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.;41791234567;a@b.c;Zurich

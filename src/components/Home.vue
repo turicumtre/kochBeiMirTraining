@@ -92,7 +92,7 @@ export default {
 	font-family: "Leckerli One", cursive;
 	}
 
-	h2 {
+	h2, figcaption {
 	font-family: "Leckerli One", cursive;
 	}
 
