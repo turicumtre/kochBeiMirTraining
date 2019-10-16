@@ -9,11 +9,17 @@
           >
         </div>
         <div class="col-5 offset-1 offset-md-0 col-md-3 px-3 py-5">
-          <span class="h3">KOCH BEI MIR</span>
-          <br>
-          <br>8000 Zürich
-          <br>info@kochbeimir.ch
-          <br>+41 (0)79 350 63 36
+			<img
+				src="../../img/Logo_inv.png"
+				style="height: 40px"
+				class="img-fluid">
+			<div class="mt-3">
+				Dominik Hiller
+				<br>Patrick Lieberherr
+			</div>
+        	<div class="mt-3">
+				<a style="color:white" href="mailto:info@kochbeimir.ch">info@kochbeimir.ch</a>
+			</div>
         </div>
         <div class="col-5 col-md-3 px-3 py-5">
           <a
