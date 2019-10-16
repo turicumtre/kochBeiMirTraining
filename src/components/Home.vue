@@ -89,16 +89,27 @@ export default {
 
 <style>
 	h1 {
-	font-family: "Leckerli One", cursive;
+		font-family: "Leckerli One", cursive;
 	}
 
-	h2, figcaption {
-	font-family: "Leckerli One", cursive;
+	h2 {
+		font-family: "Leckerli One", cursive;
+	}
+
+	figcaption {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14pt
+	}
+
+	.invert{
+		background-color:#000000cb;
+		color:white;
 	}
 
 	html {
 	scroll-behavior: smooth;
 	}
+	
 </style>
 
 <style scoped>
