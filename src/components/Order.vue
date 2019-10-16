@@ -1,47 +1,52 @@
 <template>
 <div>
 	<hr>
-	<h1>Menu Konfigurator</h1>
+	<div>
+		<h1>Menu Vorschläge</h1>
+			<b-btn class="m-3" variant="outline-dark" v-for="menu in MENUS" :key="menu" v-on:click="selectedMenu=menu">
+				{{menu.name}}
+			</b-btn>
+	</div>
 	<div class="row">
 		<div class="col-9">
-		<div class="row">
-			<div v-for="course in selectedMenuCourses" :key="course.id" class="pt-3" :class="numSelectedMenuCourses===1?'col-6 col-md-12':numSelectedMenuCourses===2?'col-6 col-md-6':numSelectedMenuCourses===3?'col-6 col-md-4':'col-6 col-md-3'" >
-			<h2>{{course.courseType}}</h2>
-				<img 
-					:src="require('../../img/coursePictures/'+course.id+'.jpg')"
-					class="object-fit-cover"
-					:alt="'Picture of '+course.id"
-					height="140"
-					width="100%"/>
-				<br/>
-				<div class="mt-2">
-					<b>{{course.nameGerman}} ({{course.pricePerPerson}}.-)</b>
-					<p class="menudescription pl-3 pr-3">
-						{{course.descrGerman}}
-					</p>
-					<b-button size="sm" v-show="course.isVegetarian && !course.isVegan" variant="dark" pill :id="course.id+'vegi'">
-						<img 
-							class="svginvert"
-							src="../../img/static/vegetarian.svg"
-							height="15px"/>
-					</b-button>
-					<b-tooltip class="btn-sm" :target="course.id+'vegi'" placement="bottom">
-						Vegetarisch
-					</b-tooltip>
-					<b-button size="sm" v-show="course.isVegan" variant="dark" pill :id="course.id+'vegan'">
-						<img 
-							class="svginvert"
-							src="../../img/static/vegan.svg"
-							height="15px"/>
-					</b-button>
-					<b-tooltip class="btn-sm" :target="course.id+'vegan'" placement="bottom">
-						Vegan
-					</b-tooltip>
+			<div class="row">
+				<div v-for="course in selectedMenuCourses" :key="course.id" class="pt-3" :class="numSelectedMenuCourses===1?'col-6 col-md-12':numSelectedMenuCourses===2?'col-6 col-md-6':numSelectedMenuCourses===3?'col-6 col-md-4':'col-6 col-md-3'" >
+				<h2>{{course.courseType}}</h2>
+					<img 
+						:src="require('../../img/coursePictures/'+course.id+'.jpg')"
+						class="object-fit-cover"
+						:alt="'Picture of '+course.id"
+						height="140"
+						width="100%"/>
+					<br/>
+					<div class="mt-2">
+						<b>{{course.nameGerman}} ({{course.pricePerPerson}}.-)</b>
+						<p class="menudescription pl-3 pr-3">
+							{{course.descrGerman}}
+						</p>
+						<b-button size="sm" v-show="course.isVegetarian && !course.isVegan" variant="dark" pill :id="course.id+'vegi'">
+							<img 
+								class="svginvert"
+								src="../../img/static/vegetarian.svg"
+								height="15px"/>
+						</b-button>
+						<b-tooltip class="btn-sm" :target="course.id+'vegi'" placement="bottom">
+							Vegetarisch
+						</b-tooltip>
+						<b-button size="sm" v-show="course.isVegan" variant="dark" pill :id="course.id+'vegan'">
+							<img 
+								class="svginvert"
+								src="../../img/static/vegan.svg"
+								height="15px"/>
+						</b-button>
+						<b-tooltip class="btn-sm" :target="course.id+'vegan'" placement="bottom">
+							Vegan
+						</b-tooltip>
+					</div>
 				</div>
 			</div>
 		</div>
-		</div>
-		<div class="col-3 invert pt-4 pb-4 pl-5 pr-5">
+		<div class="col-3 invert py-4 px-5">
 			<h2>Du benötigst</h2>
 			<ul class="p-0 m-0"> 
 				<li v-for="required in allRequired" :key="required" class="left-align p-0 m-0">
@@ -70,11 +75,11 @@
 			<table class="table table-borderless">
 				<tbody class="table table-sm" style="color:white">
 					<tr>
-						<td class="left-align p-0">Pauschale</td>
+						<td class="left-align p-0">Dein Koch</td>
 						<td class="right-align p-0">200.-</td>
 					</tr>
 					<tr v-for="course in selectedMenuCourses" :key="course.id">
-						<td class="left-align p-0">{{course.courseType}}</td>
+						<td class="left-align p-0">{{course.nameGerman}}</td>
 						<td class="right-align p-0">{{numPers*course.pricePerPerson}}.-</td>
 					</tr>
 					<tr>
@@ -102,7 +107,8 @@ const Required = Object.freeze({
   STOVE: "Herd",
   BLENDER: "Mixer",
   SALADSPINNER: "Salatschleuder",
-  MICROWAVE: "Mikrowelle"
+  MICROWAVE: "Mikrowelle",
+  FRYINGPAN: "Bratpfanne",
 });
 
 class Course{
@@ -119,9 +125,11 @@ class Course{
 }
 
 const COURSES = Object.freeze({
-  _19AVOCADOSALAD: new Course("19avocadoSalad", "Salat mit Avocado", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.", 10, true, true,[CourseType.STARTER], [Required.SALADSPINNER]),
+  _19AVOCADOSALAD: new Course("19avocadoSalad", "Avocadosalat", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.", 10, true, true,[CourseType.STARTER], [Required.SALADSPINNER]),
   _19PIZZA: new Course("19pizza", "Pizza", "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 15, false, false,[CourseType.MAIN], [Required.OVEN]),
-  _19CREMEFRUECHTE: new Course("19cremeBerries", "Creme Beeren"," At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.", 8, true, false, [CourseType.DESSERT], [])
+  _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme"," At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.", 11, true, false, [CourseType.DESSERT], []),
+  _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu","sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",9,true, false,[CourseType.DESSERT], [Required.BLENDER]),
+  _19LACHS: new Course("19lachsteller", "Lachs", "Lorem", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN])
 });
 
 class Menu{
@@ -140,14 +148,15 @@ class CourseSequence{
 }
 
 const MENUS = Object.freeze({
-  _19PIZZATRAUM: new Menu("Pizza Traum", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19PIZZA, COURSES._19CREMEFRUECHTE))
+	_19EXAMPLE2: new Menu("Kaiser Alexander", new CourseSequence(null, COURSES._19LACHS, COURSES._19TIRAMISU)),
+	_19EXAMPLE1: new Menu("Julius Caesar", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19PIZZA, COURSES._19CREMEFRUECHTE)),
 });
 
 var data = function(){
 	return {
 		COURSES,
 		MENUS,
-		selectedMenu: MENUS._19PIZZATRAUM,
+		selectedMenu: MENUS._19EXAMPLE1,
 		numPers: 2,
 	};
 }
@@ -220,14 +229,13 @@ ul {
 	font-size: small;
 }
 
+/** numPers Slider */
 .custom-range::-webkit-slider-thumb {
   background: gray;
 }
-
 .custom-range::-moz-range-thumb {
   background: gray;
 }
-
 .custom-range::-ms-thumb {
   background: gray;
 }
