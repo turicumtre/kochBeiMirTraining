@@ -10,6 +10,10 @@ library.add(faCheck, faTools);
 
 Vue.config.productionTip = false;
 
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+
 new Vue({
 	render: h => h(App)
 }).$mount("#app");
