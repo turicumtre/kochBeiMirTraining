@@ -40,7 +40,7 @@
       <Order/>
     </article>
 
-	<ImAufbau title="Im Aufbau" msg1="Die Webseite befindet sich noch im Aufbau." msg2="Wenn Sie buchen möchten senden Sie bitte eine E-Mail an info[at]kochbeimir.ch"/>
+	<!-- <ImAufbau title="Im Aufbau" msg1="Die Webseite befindet sich noch im Aufbau." msg2="Wenn Sie buchen möchten senden Sie bitte eine E-Mail an info[at]kochbeimir.ch"/> -->
     <Footer/>
 
     <!-- MODAL -->
