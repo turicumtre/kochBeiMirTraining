@@ -32,6 +32,7 @@
       <div class="text-center mt-5">
         <h1 class="display-4">Dein Koch...</h1>
         <DeinKoch/>
+		<img src="../../img/static/brown-mushrooms.jpg" class="object-fit-cover gray-img" height="200px" width="100%" alt="">
       </div>
     </article>
 
@@ -112,6 +113,15 @@
 
 	.pointer{
 		cursor: pointer;
+	}
+
+	.object-fit-cover {
+		object-fit: cover;
+	}
+
+	.gray-img{
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
 	}
 </style>
 
