@@ -1,0 +1,18 @@
+# CACHE CONTROL
+# 
+# according to https://varvy.com/pagespeed/leverage-browser-caching.html
+# Complete Guide on what you can do with this file can be found here: https://www.whoishostingthis.com/resources/htaccess/
+# For now, all caches are relatively short, later we should use longer cache periods combined with "URL Fingerprinting"
+# URL Fingerprinting: Getting a fresh (not cached) file resource is possible by having a unique name. An example would be if our css file was named "main.css" we could name it "main_1.css" instead. The next time we change it we can call it "main_2.css". This is useful for files that change occasionally.
+# File must be saved in ASCI format (not UTF-8 or anything else)
+
+
+# 1 Week for pictures
+<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
+
+# 1 Hour for HTML and JS
+<filesMatch ".(html|js|css)$">
+Header set Cache-Control "max-age=3600, public"
+</filesMatch>
