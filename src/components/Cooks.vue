@@ -1,7 +1,7 @@
 <template>
 <div>
 	<div class="invert">
-		<span v-for="cook in activeCooks">
+		<span v-for="cook in activeCooks" :key="cook.id">
 			<a @mouseover="selectedCook = cook">
 			<img v-bind:src="require('../../img/cooks/'+cook.id+'.jpg')" width="20%" >
 			</a>

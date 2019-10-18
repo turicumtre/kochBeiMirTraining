@@ -65,26 +65,26 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import Cooks from "./Cooks.vue";
-import DeinKoch from "./DeinKoch.vue";
-import Order from "./Order.vue";
-import Footer from "./Footer.vue";
-import ImAufbau from "./ImAufbau.vue";
-export default {
-  name: "Home",
-  props: {
-    msg: String
-  },
-  components: {
-	FontAwesomeIcon,
-	Cooks,
-    DeinKoch,
-    Order,
-	Footer,
-	ImAufbau
-  }
-};
+	import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+	import Cooks from "./Cooks.vue";
+	import DeinKoch from "./DeinKoch.vue";
+	import Order from "./Order.vue";
+	import Footer from "./Footer.vue";
+	import ImAufbau from "./ImAufbau.vue";
+	export default {
+	name: "Home",
+	props: {
+		msg: String
+	},
+	components: {
+		FontAwesomeIcon,
+		Cooks,
+		DeinKoch,
+		Order,
+		Footer,
+		ImAufbau
+	}
+	};
 </script>
 
 <style>
@@ -107,16 +107,19 @@ export default {
 	}
 
 	html {
-	scroll-behavior: smooth;
+		scroll-behavior: smooth;
 	}
-	
+
+	.pointer{
+		cursor: pointer;
+	}
 </style>
 
 <style scoped>
 	a.anchor {
-	display: block;
-	position: relative;
-	top: -100px;
-	visibility: hidden;
+		display: block;
+		position: relative;
+		top: -100px;
+		visibility: hidden;
 	}
 </style>
