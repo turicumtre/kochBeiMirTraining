@@ -22,7 +22,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" v-if="!selectedMenu">
+		<div class="col-12">Kein Menu ausgewählt</div>
+	</div>
+	<div class="row" v-if="selectedMenu">
 		<div class="col-9">
 			<div class="row">
 				<div v-for="course in selectedMenu.courseSequence.courses" :key="course.id" class="pt-3" :class="numSelectedMenuCourses===1?'col-6 col-md-12':numSelectedMenuCourses===2?'col-6 col-md-6':numSelectedMenuCourses===3?'col-6 col-md-4':'col-6 col-md-3'" >
@@ -114,6 +117,7 @@ const CourseType = Object.freeze({
   STARTER: 1,
   MAIN: 2,
   DESSERT: 3,
+  BERRIES: 4,
 });
 
 
@@ -125,6 +129,7 @@ const Required = Object.freeze({
   SALADSPINNER: "Salatschleuder",
   MICROWAVE: "Mikrowelle",
   FRYINGPAN: "Bratpfanne",
+  FREEZER: "Tiefkühler",
 });
 
 class Course{
@@ -145,7 +150,10 @@ const COURSES = Object.freeze({
   _19PIZZA: new Course("19pizza", "Pizza", "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 15, false, false,[CourseType.MAIN], [Required.OVEN]),
   _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme","At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.", 11, true, false, [CourseType.DESSERT], []),
   _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu","sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",9,true, false,[CourseType.DESSERT], [Required.BLENDER]),
-  _19LACHS: new Course("19lachsteller", "Lachs", "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN])
+  _19LACHS: new Course("19lachsteller", "Lachs", "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN]),
+  _19GREEKSALAD: new Course("19greekSalad", "Griechischer Salat", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 14, true, false, [CourseType.STARTER], [Required.SALADSPINNER]),
+  _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 7, true, false, [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER]),
+  _19BERRIES: new Course("19berries", "Beeren", "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 5, true, true, [CourseType.BERRIES], []),
 });
 
 class Menu{
@@ -156,7 +164,7 @@ class Menu{
 }
 
 class CourseSequence{
-	constructor(Vorspeise, Hauptgang, Dessert){
+	constructor(Vorspeise, Hauptgang, Dessert, Beeren){
 		this.courses = []
 		
 		this.Vorspeise = Vorspeise
@@ -175,20 +183,27 @@ class CourseSequence{
 		if(Dessert != null){
 			this.Dessert.courseType = "Dessert"
 			this.courses.push(Dessert)
+		}
+
+		this.Beeren = Beeren
+		if(Beeren != null){
+			this.Beeren.courseType = "Beeren"
+			this.courses.push(Beeren)
 		}		
 	}
 }
 
 const MENUS = Object.freeze({
-	_19EXAMPLE2: new Menu("Kaiser Alexander", new CourseSequence(null, COURSES._19LACHS, COURSES._19TIRAMISU)),
-	_19EXAMPLE1: new Menu("Julius Caesar", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19PIZZA, COURSES._19CREMEFRUECHTE)),
+	_19EXAMPLE2GÄNGER: new Menu("Kaiser Alexander", new CourseSequence(null, COURSES._19PIZZA, COURSES._19TIRAMISU, null)),
+	_19EXAMPLE3GÄNGER: new Menu("Julius Caesar", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19LACHS, COURSES._19CREMEFRUECHTE, null)),
+	_19EXAMPLE4GÄNGER: new Menu("Kleopatra", new CourseSequence(COURSES._19GREEKSALAD, COURSES._19LACHS, COURSES._19PISTACHENUTS, COURSES._19BERRIES)),
 });
 
 var data = function(){
 	return {
 		COURSES,
 		MENUS,
-		selectedMenu: MENUS._19EXAMPLE1,
+		selectedMenu: null,
 		numPers: 2,
 	};
 }
