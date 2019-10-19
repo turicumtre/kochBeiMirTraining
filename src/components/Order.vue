@@ -39,25 +39,21 @@
 					<br/>
 					<div class="mt-2">
 						<b>{{course.name}}</b>
-						<p class="menudescription px-3">
-							{{course.descr}}
-						</p>
-						<b-button size="sm" v-show="course.isVegetarian && !course.isVegan" variant="link" pill :id="course.id+'vegi'">
-							<img 
-								src="../../img/static/vegetarian.svg"
-								height="30px"/>
-						</b-button>
-						<b-tooltip class="btn-sm" :target="course.id+'vegi'" placement="bottom">
-							<small>Dieser Gang ist</small><br><b>Vegetarisch</b>
-						</b-tooltip>
-						<b-button size="sm" v-show="course.isVegan" variant="link" pill :id="course.id+'vegan'">
-							<img 
-								src="../../img/static/vegan.svg"
-								height="30px"/>
-						</b-button>
-						<b-tooltip class="btn-sm" :target="course.id+'vegan'" placement="bottom">
-							<small>Dieser Gang ist</small><br><b>Vegan</b>
-						</b-tooltip>
+						<p class="menudescription px-3">{{course.descr}}</p>
+						<span v-for="label in course.labels" :key="label.id">
+							<b-button size="sm" class="text-dark label-button" :class="label.hasIcon?'':'border border-dark'" variant="link" pill :id="course.id+label.id">
+								<img 
+									v-if="label.hasIcon"
+									:src="require('../../img/labels/'+label.id+'.svg')"
+									height="30px"/>
+								<span v-else>{{label.name}}</span>
+							</b-button>
+							<b-tooltip class="btn-sm" :target="course.id+label.id" placement="bottom">
+								{{label.descr?label.descr:label.name}}
+								<br>
+								<a v-if="label.linkText" :href="label.link" target="_blank">{{label.linkText}}</a>
+							</b-tooltip>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -134,12 +130,13 @@ const Required = Object.freeze({
 });
 
 class Course{
-	constructor(id, name, pricePerPerson, isVegetarian, isVegan, courseTypes, mustHaves, descr){
+	constructor(id, name, pricePerPerson, isVegetarian, isVegan, labels, courseTypes, mustHaves, descr){
 		this.id = id
 		this.name = name
 		this.pricePerPerson = pricePerPerson
 		this.isVegetarian = isVegetarian
 		this.isVegan = isVegan
+		this.labels = labels
 		this.courseTypes = courseTypes
 		this.mustHaves = mustHaves
 		this.descr = descr
@@ -147,9 +144,10 @@ class Course{
 }
 
 class Label{
-	constructor(id, adjective, descr, linkText, link){
+	constructor(id, name, hasIcon, descr, linkText, link){
 		this.id = id
-		this.adjective = adjective
+		this.name = name
+		this.hasIcon = hasIcon
 		this.descr = descr
 		this.linkText = linkText
 		this.link = link
@@ -157,23 +155,23 @@ class Label{
 }
 
 const LABELS = Object.freeze({
-	VEGI: new Label("vegetarian", "vegeratisch", null, null, null),
-	VEGAN: new Label("vegan", "vegan", null, null, null),
-	MSC: new Label("msc", "MSC", "Fisch mit dem MSC Label stammt aus nachhaltigem Wildfang", "Wikipedia", "https://de.wikipedia.org/wiki/Marine_Stewardship_Council"),
-	TERRASUISSE: new Label("terrasuisse", "TerraSuisse", "Fleisch mit dem TerraSuisse Label stammt aus tierfreundlicher schweizer Haltung", "Migros", "https://www.migros.ch/de/einkaufen/migros-marken/terrasuisse.html"),
-	BIO: new Label("organic", "Bio", "Aus biologischer Landwirtschaft"),
+	VEGI: new Label("vegetarian", "Vegeratisch", true),
+	VEGAN: new Label("vegan", "Vegan", true),
+	MSC: new Label("msc", "MSC", false, "Fisch mit dem MSC Label stammt aus nachhaltigem Wildfang", "Wikipedia", "https://de.wikipedia.org/wiki/Marine_Stewardship_Council"),
+	TERRASUISSE: new Label("terrasuisse", "TerraSuisse", false, "Fleisch mit dem TerraSuisse Label stammt aus tierfreundlicher schweizer Haltung", "Migros", "https://www.migros.ch/de/einkaufen/migros-marken/terrasuisse.html"),
+	BIO: new Label("organic", "Bio", false, "Aus biologischer Landwirtschaft"),
 })
 
 const COURSES = Object.freeze({
-  _19AVOCADOSALAD: new Course("19avocadoSalad", "Avocadosalat", 10, true, true,[CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
-  _19PIZZA: new Course("19pizza", "Pizza", 15, false, false,[CourseType.MAIN], [Required.OVEN], "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
-  _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme", 11, true, false, [CourseType.DESSERT], [], "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."),
-  _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu",9,true, false,[CourseType.DESSERT], [Required.BLENDER], "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
-  _19LACHS: new Course("19lachsteller", "Lachs", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN], "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
-  _19GREEKSALAD: new Course("19greekSalad", "Griechischer Salat", 14, true, false, [CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
-  _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", 7, true, false, [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER], "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
-  _19BERRIES: new Course("19berries", "Beeren", 5, true, true, [CourseType.BERRIES], [], "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
-  _19SURPRISE: new Course("19surprise", "Surprise", 50, false, false, [CourseType.MAIN], [], "Lass dich von deinem Koch überraschen. Du erfährst erst am Abend, was es geben wird ;)"),
+  _19AVOCADOSALAD: new Course("19avocadoSalad", "Avocadosalat", 10, true, true, [LABELS.VEGAN],[CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+  _19PIZZA: new Course("19pizza", "Pizza", 15, false, false, [],[CourseType.MAIN], [Required.OVEN], "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme", 11, true, false, [LABELS.VEGI], [CourseType.DESSERT], [], "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."),
+  _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu",9,true, false, [LABELS.VEGI], [CourseType.DESSERT], [Required.BLENDER], "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+  _19LACHS: new Course("19lachsteller", "Lachs", 18, false, false, [LABELS.MSC], [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN], "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19GREEKSALAD: new Course("19greekSalad", "Griechischer Salat", 14, true, false, [LABELS.VEGI, LABELS.BIO], [CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", 7, true, false, [LABELS.VEGI], [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER], "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19BERRIES: new Course("19berries", "Beeren", 5, true, true, [LABELS.VEGAN], [CourseType.BERRIES], [], "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19SURPRISE: new Course("19surprise", "Surprise", 50, false, false, [], [CourseType.MAIN], [], "Lass dich von deinem Koch überraschen. Du erfährst erst am Abend, was es geben wird ;)"),
 });
 
 class Menu{
@@ -299,6 +297,14 @@ ul {
 
 .line-height-low{
 	line-height:1.2
+}
+
+.label-button{
+	cursor:default;
+}
+
+.label-button:hover{
+	text-decoration: none;
 }
 
 /** numPers Slider */
