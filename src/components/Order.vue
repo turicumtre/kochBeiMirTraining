@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-4 mt-md-0 col-8 col-md-3 invert py-4 px-5 px-md-5 line-height-low">
+		<div class="mt-4 mt-md-0 col-12 col-md-3 invert py-4 px-5 px-md-5 line-height-low">
 			<div v-if="allRequired.size>0" class="mb-4">
 				<h2>Du benötigst</h2>
 				<ul class="p-0 m-0">
