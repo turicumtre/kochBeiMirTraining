@@ -51,7 +51,7 @@
 							<b-tooltip class="btn-sm" :target="course.id+label.id" placement="bottom">
 								{{label.descr?label.descr:label.name}}
 								<br>
-								<a v-if="label.linkText" :href="label.link" target="_blank">{{label.linkText}}</a>
+								<a class="text-white" v-if="label.linkText" :href="label.link" target="_blank">Mehr Informationen</a>
 							</b-tooltip>
 						</span>
 					</div>
@@ -144,12 +144,11 @@ class Course{
 }
 
 class Label{
-	constructor(id, name, hasIcon, descr, linkText, link){
+	constructor(id, name, hasIcon, descr, link){
 		this.id = id
 		this.name = name
 		this.hasIcon = hasIcon
 		this.descr = descr
-		this.linkText = linkText
 		this.link = link
 	}
 }
@@ -157,8 +156,9 @@ class Label{
 const LABELS = Object.freeze({
 	VEGI: new Label("vegetarian", "Vegeratisch", true),
 	VEGAN: new Label("vegan", "Vegan", true),
-	MSC: new Label("msc", "MSC", false, "Fisch mit dem MSC Label stammt aus nachhaltigem Wildfang", "Wikipedia", "https://de.wikipedia.org/wiki/Marine_Stewardship_Council"),
-	TERRASUISSE: new Label("terrasuisse", "TerraSuisse", false, "Fleisch mit dem TerraSuisse Label stammt aus tierfreundlicher schweizer Haltung", "Migros", "https://www.migros.ch/de/einkaufen/migros-marken/terrasuisse.html"),
+	MSC: new Label("msc", "MSC", false, "Fisch mit dem MSC Label stammt aus nachhaltigem Wildfang", "https://de.wikipedia.org/wiki/Marine_Stewardship_Council"),
+	ASC: new Label("asc", "ASC", false, "Fisch mit dem ASC Label stammt aus nachhaltiger Zucht", "https://de.wikipedia.org/wiki/Nachhaltige_Fischerei"),
+	TERRASUISSE: new Label("terrasuisse", "TerraSuisse", false, "Fleisch mit dem TerraSuisse Label stammt aus tierfreundlicher schweizer Haltung", "https://www.migros.ch/de/einkaufen/migros-marken/terrasuisse.html"),
 	BIO: new Label("organic", "Bio", false, "Aus biologischer Landwirtschaft"),
 })
 
