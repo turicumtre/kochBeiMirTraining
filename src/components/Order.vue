@@ -61,7 +61,14 @@
 		<div class="mt-4 mt-md-0 col-8 col-md-3 invert py-4 px-5 px-md-5 line-height-low">
 			<div v-if="allRequired.size>0" class="mb-4">
 				<h2>Du benötigst</h2>
-				<ul class="p-0 m-0"> 
+				<ul class="p-0 m-0">
+					<li class="left-align p-0 m-0">
+						<img 
+							class="svg-invert"
+							src="../../img/mustHaveIcons/Gedeck.svg"
+							height="20px"/>
+						&nbsp;&nbsp;Gedeck für {{numPers}} Pers.
+					</li> 
 					<li v-for="required in allRequired" :key="required" class="left-align p-0 m-0">
 						<img 
 							class="svg-invert"
