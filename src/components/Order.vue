@@ -1,9 +1,9 @@
 <template>
 <div>
 	<div>
-		<h1 class="mt-5 display-4">Dein Menu</h1>
+		<h1 class="mt-5 display-md-4">Dein Menu</h1>
 		<div class="row">
-			<div class="pointer m-3 col-6 col-md-3 menu-suggestion" v-for="menu in MENUS" :key="menu.id" @click="selectedMenu=menu">
+			<div class="pointer px-4 py-2 col-6 col-md-3 menu-suggestion" v-for="menu in MENUS" :key="menu.id" @click="selectedMenu=menu" :class="menu==selectedMenu?'selected-menu':''">
 				<div class="row">
 					<img
 						v-for="course in menu.courseSequence.courses"
@@ -25,60 +25,60 @@
 	<div class="row" v-if="!selectedMenu">
 		<div class="col-12">Kein Menu ausgewählt</div>
 	</div>
-	<div class="row" v-if="selectedMenu">
-		<div class="col-9">
+	<div class="row justify-content-center" v-if="selectedMenu">
+		<div class="col-12 col-md-9">
 			<div class="row">
-				<div v-for="course in selectedMenu.courseSequence.courses" :key="course.id" class="pt-3" :class="numSelectedMenuCourses===1?'col-6 col-md-12':numSelectedMenuCourses===2?'col-6 col-md-6':numSelectedMenuCourses===3?'col-6 col-md-4':'col-6 col-md-3'" >
-				<h2>{{course.courseType}}</h2>
+				<div v-for="course in selectedMenu.courseSequence.courses" :key="course.id" class="py-2 px-1" :class="numSelectedMenuCourses===1?'col-12 col-md-12':numSelectedMenuCourses===2?'col-6 col-md-6':numSelectedMenuCourses===3?'col-6 col-md-4':'col-6 col-md-3'" >
+					<h2 class="h3">{{course.courseType}}</h2>
 					<img 
 						:src="require('../../img/coursePictures/'+course.id+'.jpg')"
 						class="object-fit-cover"
 						:alt="'Picture of '+course.id"
-						height="140"
+						height="220"
 						width="100%"/>
 					<br/>
 					<div class="mt-2">
-						<b>{{course.name}} ({{course.pricePerPerson}}.-)</b>
-						<p class="menudescription pl-3 pr-3">
+						<b>{{course.name}}</b>
+						<p class="menudescription px-3">
 							{{course.descr}}
 						</p>
-						<b-button size="sm" v-show="course.isVegetarian && !course.isVegan" variant="dark" pill :id="course.id+'vegi'">
+						<b-button size="sm" v-show="course.isVegetarian && !course.isVegan" variant="link" pill :id="course.id+'vegi'">
 							<img 
-								class="svginvert"
 								src="../../img/static/vegetarian.svg"
-								height="15px"/>
+								height="30px"/>
 						</b-button>
 						<b-tooltip class="btn-sm" :target="course.id+'vegi'" placement="bottom">
-							Vegetarisch
+							<small>Dieser Gang ist</small><br><b>Vegetarisch</b>
 						</b-tooltip>
-						<b-button size="sm" v-show="course.isVegan" variant="dark" pill :id="course.id+'vegan'">
+						<b-button size="sm" v-show="course.isVegan" variant="link" pill :id="course.id+'vegan'">
 							<img 
-								class="svginvert"
 								src="../../img/static/vegan.svg"
-								height="15px"/>
+								height="30px"/>
 						</b-button>
 						<b-tooltip class="btn-sm" :target="course.id+'vegan'" placement="bottom">
-							Vegan
+							<small>Dieser Gang ist</small><br><b>Vegan</b>
 						</b-tooltip>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-3 invert py-4 px-5">
-			<h2>Du benötigst</h2>
-			<ul class="p-0 m-0"> 
-				<li v-for="required in allRequired" :key="required" class="left-align p-0 m-0">
-					<img 
-						class="svginvert"
-						:src="require('../../img/mustHaveIcons/'+required+'.svg')"
-						height="20px"/>
-					&nbsp;&nbsp;{{required}}
-				</li>
-				<li class="left-align p-0 m-0 mt-3" style="color: gray">
-					<i>Dein koch bringt den Rest</i>
-				</li>
-			</ul>
-			<h2 class="mt-4">Gäste</h2>
+		<div class="mt-4 mt-md-0 col-8 col-md-3 invert py-4 px-5 px-md-5 line-height-low">
+			<div v-if="allRequired.size>0" class="mb-4">
+				<h2>Du benötigst</h2>
+				<ul class="p-0 m-0"> 
+					<li v-for="required in allRequired" :key="required" class="left-align p-0 m-0">
+						<img 
+							class="svg-invert"
+							:src="require('../../img/mustHaveIcons/'+required+'.svg')"
+							height="20px"/>
+						&nbsp;&nbsp;{{required}}
+					</li>
+					<li class="left-align p-0 m-0 mt-1 small-gray-txt">
+						Dein Koch bringt den Rest
+					</li>
+				</ul>
+			</div>
+			<h2>Gäste</h2>
 			<div class="row">
 				<div class="col-6 left-align">
 					{{numPers}} Gäste
@@ -87,13 +87,13 @@
 					<b-form-input v-model="numPers" type="range" min="2" max="15"></b-form-input>
 				</div>
 			</div>
-			<small v-if="numPers==15"><a style="color:white" href="mailto:info@kochbeimir.ch?subject=Offerte für mehr als 15 Gäste&body=Bei mehr als 15 Gäste sind mehrere Köche erforderlich. Wir erstellen gerne eine Offerte Für Dich.">Mehr als 15 Gäste?</a></small>
+			<small class="m-0 p-0" v-if="numPers==15"><br><a style="color:white" href="mailto:info@kochbeimir.ch?subject=Offerte für mehr als 15 Gäste&body=Bei mehr als 15 Gäste sind mehrere Köche erforderlich. Wir erstellen gerne eine Offerte Für Dich.">Mehr als 15 Gäste?</a></small>
 
-			<h2 class="mt-4">Preis</h2>
+			<h2 class="mt-4">Rechnung</h2>
 			<table class="table table-borderless">
 				<tbody class="table table-sm" style="color:white">
 					<tr>
-						<td class="left-align p-0">Dein Koch</td>
+						<td class="left-align p-0">Pauschale</td>
 						<td class="right-align p-0">200.-</td>
 					</tr>
 					<tr v-for="course in selectedMenu.courseSequence.courses" :key="course.id">
@@ -101,11 +101,12 @@
 						<td class="right-align p-0">{{numPers*course.pricePerPerson}}.-</td>
 					</tr>
 					<tr>
-						<td class="left-align p-0 pt-3"><b>TOTAL <small style="color: gray">({{numPers}} Personen)</small></b></td>
+						<td class="left-align p-0 pt-3"><b>Total </b></td>
 						<td class="right-align p-0 pt-3"><b>{{totalPriceCHF}}.-</b></td>
 					</tr>
 				</tbody>
 			</table>
+			<span class="small-gray-txt">Preise in CHF für {{numPers}} Pers. inkl. MwSt.</span>
 		</div>
 	</div>
 </div>
@@ -133,27 +134,46 @@ const Required = Object.freeze({
 });
 
 class Course{
-	constructor(id, name, descr, pricePerPerson, isVegetarian, isVegan, courseTypes, mustHaves){
+	constructor(id, name, pricePerPerson, isVegetarian, isVegan, courseTypes, mustHaves, descr){
 		this.id = id
 		this.name = name
-		this.descr = descr
 		this.pricePerPerson = pricePerPerson
 		this.isVegetarian = isVegetarian
 		this.isVegan = isVegan
 		this.courseTypes = courseTypes
 		this.mustHaves = mustHaves
+		this.descr = descr
 	}
 }
 
+class Label{
+	constructor(id, adjective, descr, linkText, link){
+		this.id = id
+		this.adjective = adjective
+		this.descr = descr
+		this.linkText = linkText
+		this.link = link
+	}
+}
+
+const LABELS = Object.freeze({
+	VEGI: new Label("vegetarian", "vegeratisch", null, null, null),
+	VEGAN: new Label("vegan", "vegan", null, null, null),
+	MSC: new Label("msc", "MSC", "Fisch mit dem MSC Label stammt aus nachhaltigem Wildfang", "Wikipedia", "https://de.wikipedia.org/wiki/Marine_Stewardship_Council"),
+	TERRASUISSE: new Label("terrasuisse", "TerraSuisse", "Fleisch mit dem TerraSuisse Label stammt aus tierfreundlicher schweizer Haltung", "Migros", "https://www.migros.ch/de/einkaufen/migros-marken/terrasuisse.html"),
+	BIO: new Label("organic", "Bio", "Aus biologischer Landwirtschaft"),
+})
+
 const COURSES = Object.freeze({
-  _19AVOCADOSALAD: new Course("19avocadoSalad", "Avocadosalat", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.", 10, true, true,[CourseType.STARTER], [Required.SALADSPINNER]),
-  _19PIZZA: new Course("19pizza", "Pizza", "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 15, false, false,[CourseType.MAIN], [Required.OVEN]),
-  _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme","At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.", 11, true, false, [CourseType.DESSERT], []),
-  _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu","sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",9,true, false,[CourseType.DESSERT], [Required.BLENDER]),
-  _19LACHS: new Course("19lachsteller", "Lachs", "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN]),
-  _19GREEKSALAD: new Course("19greekSalad", "Griechischer Salat", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 14, true, false, [CourseType.STARTER], [Required.SALADSPINNER]),
-  _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 7, true, false, [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER]),
-  _19BERRIES: new Course("19berries", "Beeren", "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", 5, true, true, [CourseType.BERRIES], []),
+  _19AVOCADOSALAD: new Course("19avocadoSalad", "Avocadosalat", 10, true, true,[CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+  _19PIZZA: new Course("19pizza", "Pizza", 15, false, false,[CourseType.MAIN], [Required.OVEN], "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19CREMEFRUECHTE: new Course("19cremeBerries", "Beeren Creme", 11, true, false, [CourseType.DESSERT], [], "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."),
+  _19TIRAMISU: new Course("19tiramisu","Mango Tiramisu",9,true, false,[CourseType.DESSERT], [Required.BLENDER], "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+  _19LACHS: new Course("19lachsteller", "Lachs", 18, false, false, [CourseType.MAIN], [Required.STEAMER, Required.STOVE, Required.FRYINGPAN], "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19GREEKSALAD: new Course("19greekSalad", "Griechischer Salat", 14, true, false, [CourseType.STARTER], [Required.SALADSPINNER], "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", 7, true, false, [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER], "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19BERRIES: new Course("19berries", "Beeren", 5, true, true, [CourseType.BERRIES], [], "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
+  _19SURPRISE: new Course("19surprise", "Surprise", 50, false, false, [CourseType.MAIN], [], "Lass dich von deinem Koch überraschen. Du erfährst erst am Abend, was es geben wird ;)"),
 });
 
 class Menu{
@@ -194,9 +214,10 @@ class CourseSequence{
 }
 
 const MENUS = Object.freeze({
-	_19EXAMPLE2GÄNGER: new Menu("Kaiser Alexander", new CourseSequence(null, COURSES._19PIZZA, COURSES._19TIRAMISU, null)),
+	_19EXAMPLE2GÄNGER: new Menu("Kaiser Alex", new CourseSequence(null, COURSES._19PIZZA, COURSES._19TIRAMISU, null)),
 	_19EXAMPLE3GÄNGER: new Menu("Julius Caesar", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19LACHS, COURSES._19CREMEFRUECHTE, null)),
 	_19EXAMPLE4GÄNGER: new Menu("Kleopatra", new CourseSequence(COURSES._19GREEKSALAD, COURSES._19LACHS, COURSES._19PISTACHENUTS, COURSES._19BERRIES)),
+	_19SURPRISE: new Menu("Surprise", new CourseSequence(null, COURSES._19SURPRISE, null,null)),
 });
 
 var data = function(){
@@ -244,11 +265,6 @@ ul {
   list-style-type: none;
 }
 
-.svginvert{
-	-webkit-filter:invert(1);
-        filter:invert(1);
-}
-
 .left-align{
   text-align: left;
 }
@@ -268,11 +284,21 @@ ul {
 	transition:0.5s;
 }
 
-.menu-suggestion:hover{
+.selected-menu{
 	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
   	filter: grayscale(0%);
 	transition:0.5s;
-	transform: scale(1.2);
+	transform: scale(1.1);
+	cursor:default;
+	}
+
+.small-gray-txt {
+	color: gray;
+	font-size:0.7em
+}
+
+.line-height-low{
+	line-height:1.2
 }
 
 /** numPers Slider */

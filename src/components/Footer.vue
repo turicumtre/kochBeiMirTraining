@@ -11,7 +11,8 @@
         <div class="col-5 offset-1 offset-md-0 col-md-3 px-3 py-5">
 			<img
 				src="../../img/Logo_inv.png"
-				style="height: 40px"
+				width="80%"
+				style="max-width:200px"
 				class="img-fluid">
 			<div class="mt-3">
 				Dominik Hiller
