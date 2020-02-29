@@ -185,6 +185,9 @@ const COURSES = Object.freeze({
   _20NUESSLI: new Course("20nuessli", "Nüsslisalat", 10, true, false, [], [CourseType.STARTER], [], "Nüsslisalat mit Pilzen und Knoblauchbrot"),
   _20SCHWEINSNIERSTUECK: new Course("20schweinsnierstueck", "Schweinsnierstück", 10, false, false, [], [CourseType.MAIN], [], "Schweinsnierstück mit Baby Karotten und Apfel-Risotto"),
   _20TOBLERONEMOUSSE: new Course("20tobleronemousse", "Toblerone Mousse", 10, true, false, [], [CourseType.DESSERT], [], ""),
+  _20LACHSTATAR: new Course("20lachstatar", "Lachstatar", 10, false, false, [], [CourseType.STARTER], [], "Norwegischer Wildlachs mit Sprossensalat"),
+  _20RINDSENTRECOTE: new Course("20rindsentrecote", "Rindsentrecôte", 10, false, false, [], [CourseType.MAIN], [], "Rindsentrecote am Stück mit jungen Bratkartoffeln und Romanesco "),
+  _20CHOCOSOUFFLE: new Course("20chocosouffle", "Soufflé", 10, true, false, [], [CourseType.DESSERT], [], "Schoko Kokos Soufflé"),
 });
 
 class Menu{
@@ -231,6 +234,7 @@ const MENUS = Object.freeze({
 	_19SURPRISE: new Menu("Surprise", new CourseSequence(null, COURSES._19SURPRISE, null,null)),
 	_20GEWUERZ: new Menu("Vegetarisches Gewürze", new CourseSequence(COURSES._20RANDENSUPPE, COURSES._20DAL, COURSES._20CATALANA, null)),
 	_20BAUER: new Menu("Was der Bauer so kennt", new CourseSequence(COURSES._20NUESSLI, COURSES._20SCHWEINSNIERSTUECK, COURSES._20TOBLERONEMOUSSE, null)),
+	_20FEIERN: new Menu("Ein Grund zum Feiern", new CourseSequence(COURSES._20LACHSTATAR, COURSES._20RINDSENTRECOTE, COURSES._20CHOCOSOUFFLE, null)),
 });
 
 var data = function(){
