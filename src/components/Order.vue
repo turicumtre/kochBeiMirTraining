@@ -179,6 +179,9 @@ const COURSES = Object.freeze({
   _19PISTACHENUTS: new Course("19pistacheIceNuts", "Pistazien Glacé", 7, true, false, [LABELS.VEGI], [CourseType.DESSERT], [Required.SALADSPINNER, Required.FREEZER], "Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
   _19BERRIES: new Course("19berries", "Beeren", 5, true, true, [LABELS.VEGAN], [CourseType.BERRIES], [], "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."),
   _19SURPRISE: new Course("19surprise", "Surprise", 50, false, false, [], [CourseType.MAIN], [], "Lass dich von deinem Koch überraschen. Du erfährst erst am Abend, was es geben wird ;)"),
+  _20RANDENSUPPE: new Course("20randensuppe", "Randensuppe mit Ingwer", 10, true, false, [], [CourseType.STARTER], [], "Lass dich von deinem Koch überraschen. Du erfährst erst am Abend, was es geben wird ;)"),
+  _20DAL: new Course("20dal", "Blumenkohl Linsen Dal", 20, true, false, [], [CourseType.MAIN], [], "Blumenkohl Linsen Dal, serviert mit Naan Brot"),
+  _20CATALANA: new Course("20catalana", "Creme Catalana", 10, true, false, [], [CourseType.DESSERT], [], "Creme Catalana"),
 });
 
 class Menu{
@@ -223,6 +226,7 @@ const MENUS = Object.freeze({
 	_19EXAMPLE3GÄNGER: new Menu("Julius Caesar", new CourseSequence(COURSES._19AVOCADOSALAD, COURSES._19LACHS, COURSES._19CREMEFRUECHTE, null)),
 	_19EXAMPLE4GÄNGER: new Menu("Kleopatra", new CourseSequence(COURSES._19GREEKSALAD, COURSES._19LACHS, COURSES._19PISTACHENUTS, COURSES._19BERRIES)),
 	_19SURPRISE: new Menu("Surprise", new CourseSequence(null, COURSES._19SURPRISE, null,null)),
+	_20GEWUERZ: new Menu("Vegetarisches Gewürze", new CourseSequence(COURSES._20RANDENSUPPE, COURSES._20DAL, COURSES._20CATALANA, null)),
 });
 
 var data = function(){
