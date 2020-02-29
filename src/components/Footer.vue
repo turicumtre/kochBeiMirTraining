@@ -17,6 +17,7 @@
 			<div class="mt-3">
 				Dominik Hiller
 				<br>Patrick Lieberherr
+				<br>Beni
 			</div>
         	<div class="mt-3">
 				<a style="color:white" href="mailto:info@kochbeimir.ch">info@kochbeimir.ch</a>
