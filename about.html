@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<title>KochBeiMir | Über uns</title>
+	<link href="../lib/bootstrap.css"
+		  rel="stylesheet">
+	<link href="style.css"
+		  rel="stylesheet">
+	</link>
+	<link rel="icon"
+		  href="../img/favicon.jpg">
+</head>
+
+<body>
+	<!-- NAVIGATION -->
+	<div class="container text-center sticky-top background-white">
+		<nav id="navbarSite"
+			 class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<a href="index.html" class="navbar-brand"><img src="../img/Logo_gray.jpeg" height="25px" alt="Logo"></a>
+
+				<!-- Hamburger Button -->
+				<button class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#toggledNavigation"><span class="navbar-toggler-icon"></span></button>
+
+
+				<div class="navbar-nav collapse navbar-collapse"
+					 id="toggledNavigation">
+					<a href="index.html" class="nav-item nav-link">Home</a>
+					<a href="about.html" class="nav-item nav-link active">Über uns</a>
+
+					<!-- Dropdown -->
+					<div class="dropdown">
+						<a class="nav-item nav-link dropdown-toggle"
+									 data-toggle="dropdown"
+									 id="menuListDropdown"
+									 aria-haspopup="true"
+									 aria-expanded="false"
+									 style="cursor: pointer">Menus</a>
+						<div class="dropdown-menu"
+							 aria-labelledby="menuListDropdown">
+							<a class="dropdown-item" href="#">Ehrlich</a>
+							<a class="dropdown-item" href="#">Raffiniert</a>
+							<a class="dropdown-item" href="#">Chef's Choice</a>
+						</div>
+					</div>
+					<a href="contact.html" class="nav-item nav-link">Kontakt</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<article class="container">
+		<section>
+			<h1 class="display-4">Über uns</h1>
+			<p class="lead">Wir sind 4 Dudes blabla...</p>
+		</section>
+		<section>
+			<h2>Partner</h2>
+			<p>Wir kooperieren mit <a href="http://www.farmy.ch" target="_blank">Farmy</a>.</p>
+			<h2>Rezepte</h2>
+			<p>
+				Wir kochen z.B. das Menu
+				<a href="../download/ehrlich-menu.pdf" title="Ehrlich Menu download" target="_blank">Ehrlich</a>.
+			</p>
+		</section>
+	</article>
+
+	<div class="dividor mt-5"></div>
+	<aside class="container text-center mt-5 d-none d-lg-block">
+		<blockquote class="blockquote mb-2">Lieber ein bißchen zu gut gegessen als wie zu erbärmlich getrunken.
+		</blockquote>
+		<span class="blockquote-footer">Wilhelm Busch (1832 - 1908)</span>
+	</aside>
+
+
+
+	<script src="../lib/jquery.js"></script>
+	<script src="../lib/popper.js"></script>
+	<script src="../lib/bootstrap.js"></script>
+	<script src="../public/script.js"></script>
+</body>
+
+</html>
